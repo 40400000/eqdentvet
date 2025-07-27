@@ -889,7 +889,7 @@ export default function EqdentLanding() {
       </motion.section>
 
       {/* Footer */}
-
+      <section className="bg-slate-950">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="relative h-40 w-40 mx-auto mb-4">
@@ -904,6 +904,7 @@ export default function EqdentLanding() {
             <p className="text-sm text-slate-500">© 2025 Eqdent. Alle rechten voorbehouden.</p>
           </div>
         </div>
+      </section>
 
     </div>
   )
