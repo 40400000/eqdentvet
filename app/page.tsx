@@ -889,13 +889,7 @@ export default function EqdentLanding() {
       </motion.section>
 
       {/* Footer */}
-      <motion.footer
-        className="bg-slate-950 py-12 border-t border-slate-800"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-        viewport={{ once: true, amount: 0.1 }}
-      >
+
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="relative h-40 w-40 mx-auto mb-4">
@@ -910,7 +904,7 @@ export default function EqdentLanding() {
             <p className="text-sm text-slate-500">© 2025 Eqdent. Alle rechten voorbehouden.</p>
           </div>
         </div>
-      </motion.footer>
+
     </div>
   )
 }
