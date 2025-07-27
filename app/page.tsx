@@ -232,8 +232,7 @@ export default function EqdentLanding() {
               <div className="lg:col-span-3 space-y-6">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <Badge className="bg-blue-700 text-white border-0">Eerste van zijn soort</Badge>
-                    <Badge className="bg-green-100 text-green-800 border-green-200">Binnenkort beschikbaar</Badge>
+                    <Badge className="bg-blue-700 text-white border-0">Binnenkort beschikbaar</Badge>
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-4">EqDent NoTeeth</h3>
                   <p className="text-lg text-slate-600 leading-relaxed mb-6">
