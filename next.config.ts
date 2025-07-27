@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "vhtnlfbnq3ecybmn.public.blob.vercel-storage.com",
       },
+      {
+        protocol: "https",
+        hostname: "fei-fan-production.s3.amazonaws.com",
+      },
     ],
   },
 };

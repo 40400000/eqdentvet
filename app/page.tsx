@@ -329,6 +329,31 @@ export default function EqdentLanding() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="relative bg-slate-800 py-24">
+        <Image
+          src="https://fei-fan-production.s3.amazonaws.com/s3fs-public/160920-irish-2.jpg"
+          alt="Horse in a field"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 z-0 opacity-20"
+        />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">Klaar om de volgende stap te zetten?</h2>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+            Word lid van de groeiende groep professionals die kiezen voor veiligheid en efficiëntie.
+          </p>
+          <Button
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+            onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Vraag nu toegang aan
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </section>
+
       {/* Product Specifications */}
       <section className="bg-slate-50 py-20">
         <div className="container mx-auto px-4">
