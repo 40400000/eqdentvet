@@ -15,8 +15,8 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ 
-  title = "Maak een afspraak", 
-  subtitle = "Neem contact op voor routinecontroles of urgente tandheelkundige problemen. Wij komen naar uw locatie.",
+  title = "Inschrijven en afspraak maken", 
+  subtitle = "Neem contact op voor routine of expertise zorg problemen. Wij komen naar uw locatie.",
   showHeader = true 
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)

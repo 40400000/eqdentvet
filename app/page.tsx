@@ -93,7 +93,7 @@ export default function EqdentLanding() {
                 className="bg-blue-700 hover:bg-blue-600 text-white px-8 py-4 text-lg"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
-                Inschrijven & afspraak maken
+                Inschrijven en afspraak maken
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -224,7 +224,7 @@ export default function EqdentLanding() {
             className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 text-lg"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-             Inschrijven & afspraak maken
+             Inschrijven en afspraak maken
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
@@ -318,7 +318,7 @@ export default function EqdentLanding() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-light text-blue-900 mb-6">  Inschrijven & afspraak maken</h2>
+              <h2 className="text-3xl font-light text-blue-900 mb-6">Inschrijven en afspraak maken</h2>
               <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                 Neem contact op voor routinecontroles of urgente tandheelkundige problemen. Wij komen naar uw locatie.
               </p>
