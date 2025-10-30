@@ -11,7 +11,7 @@ export function BehandelingSection() {
               Aanpak
             </span>
           </div>
-          <h2 className="text-3xl font-light text-blue-900 mb-6">Routine behandeling</h2>
+          <h2 className="text-3xl font-light text-blue-900 mb-6">Periodieke zorg</h2>
         </div>
 
         <div className="max-w-4xl mx-auto">

@@ -1,30 +1,12 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { ArrowRight, Mail, Phone, MapPin, CheckCircle } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 import Link from "next/link"
-import { submitWaitlistForm } from "../actions"
+import { ContactForm } from "@/components/ContactForm"
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState("")
-
-  const handleSubmit = async (formData: FormData) => {
-    setIsSubmitting(true)
-    try {
-      const result = await submitWaitlistForm(formData)
-      setSubmitMessage(result.message)
-    } catch (error) {
-      setSubmitMessage("Er is een fout opgetreden. Probeer het opnieuw.")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -138,91 +120,8 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-              className="bg-white rounded-lg shadow-sm border border-slate-200 p-8"
             >
-              <h2 className="text-2xl font-semibold text-slate-900 mb-6">Maak een afspraak</h2>
-              
-              {submitMessage ? (
-                <div className="text-center py-12">
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-8">
-                    <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                    <p className="text-green-800 text-xl font-semibold">{submitMessage}</p>
-                  </div>
-                </div>
-              ) : (
-                <form action={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName" className="text-slate-700 font-medium">
-                        Voornaam *
-                      </Label>
-                      <Input
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Uw voornaam"
-                        required
-                        className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white"
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName" className="text-slate-700 font-medium">
-                        Achternaam *
-                      </Label>
-                      <Input
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Uw achternaam"
-                        required
-                        className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-slate-700 font-medium">
-                      E-mailadres *
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="uw@email.nl"
-                      required
-                      className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="location" className="text-slate-700 font-medium">
-                      Behandellocatie (adres van het paard) *
-                    </Label>
-                    <Input
-                      id="location"
-                      name="location"
-                      placeholder="Straat, huisnummer, postcode, plaats"
-                      required
-                      className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white"
-                    />
-                  </div>
-
-                  <div className="pt-4">
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      size="lg"
-                      className="w-full bg-blue-700 hover:bg-blue-600 text-white py-4 text-lg font-medium"
-                    >
-                      {isSubmitting ? "Bezig met verzenden..." : "Afspraak aanvragen"}
-                      {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
-                    </Button>
-                  </div>
-                </form>
-              )}
-
-              <p className="text-sm text-slate-500 text-center mt-6">
-                We respecteren uw privacy en nemen binnen 24 uur contact met u op voor het plannen van een afspraak.
-              </p>
+              <ContactForm />
             </motion.div>
           </div>
         </div>

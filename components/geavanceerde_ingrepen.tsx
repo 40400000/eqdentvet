@@ -11,7 +11,7 @@ export function GeavanceerdeIngrepenSection() {
               Ingrepen
             </span>
           </div>
-          <h2 className="text-3xl font-light text-blue-900 mb-6">Geavanceerde Ingrepen</h2>
+          <h2 className="text-3xl font-light text-blue-900 mb-6">Expertise zorg</h2>
           <p className="text-xl text-gray-600 leading-relaxed">
             Voor complexe tandheelkundige problemen bieden wij geavanceerde behandelingen 
             direct aan met de modernste technieken. Geen verwijzing nodig!
