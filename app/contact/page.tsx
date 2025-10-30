@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowRight, Mail, Phone, MapPin, CheckCircle, Clock } from "lucide-react"
+import { ArrowRight, Mail, Phone, MapPin, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import { submitWaitlistForm } from "../actions"
 
@@ -109,26 +109,13 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-slate-900 mb-1">Werkgebied</h3>
                       <p className="text-slate-600">
-                        Wij komen naar uw locatie voor ambulante tandheelkundige zorg.<br />
-                        Actief in heel Nederland.
+                        Ambulant (mobiel) in regio Veluwe.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Availability */}
-              <div className="bg-slate-50 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Clock className="h-5 w-5 text-blue-700" />
-                  <h3 className="font-semibold text-slate-900">Beschikbaarheid</h3>
-                </div>
-                <div className="space-y-2 text-slate-600">
-                  <p><strong>Afspraken:</strong> Maandag t/m vrijdag, flexibele tijden</p>
-                  <p><strong>Spoedgevallen:</strong> 24/7 bereikbaar</p>
-                  <p><strong>Reactietijd:</strong> Binnen 24 uur contact</p>
-                </div>
-              </div>
 
               {/* Emergency */}
               <div className="bg-red-50 border border-red-200 rounded-lg p-6">
