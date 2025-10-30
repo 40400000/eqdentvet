@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EqDent NoTeeth",
-  description: "De eerste tandheelkundige tool van zijn soort voor paarden. Langdurig, veilig en met verwisselbare rubbers. Meld je aan voor de lancering.",
-  keywords: "EqDent, paardentandheelkunde, veterinair, NoTeeth, tandheelkundige tool",
+  title: "EqDent - Paardentandheelkunde aan Huis",
+  description: "Professionele paardentandheelkunde bij het paard thuis. Specialistische zorg voor routinecontroles en complexe gevallen. Voorkomen is beter dan genezen.",
+  keywords: "EqDent, paardentandheelkunde, tandarts paard, aan huis, mobile equine dentistry, paardentandarts",
 };
 
 export default function RootLayout({
