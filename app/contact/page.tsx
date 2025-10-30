@@ -88,17 +88,36 @@ export default function ContactPage() {
                     <div className="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="font-semibold text-slate-900 mb-1">Werkgebied</h3>
-                      <p className="text-slate-600">
+                      <p className="text-slate-600 mb-4">
                         Ambulant (mobiel) in regio Veluwe.
                       </p>
+                      <div className="mt-4">
+                        <iframe 
+                          src="https://commutetimemap.com/embedded?places=52.434043%253B6.079267%253B1%253B2400%253B%25234143f4&operation=none" 
+                          name="commuteTimeMapIFrame" 
+                          height="400" 
+                          width="100%"
+                          className="rounded-lg border border-slate-200"
+                          style={{ border: 'none' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
 
+            </motion.div>
+
+            {/* Right Column */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
+              className="space-y-8"
+            >
               {/* Emergency */}
               <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <h3 className="font-semibold text-red-900 mb-2">Spoedgeval?</h3>
@@ -113,14 +132,8 @@ export default function ContactPage() {
                   Bel direct: 06-12345678
                 </a>
               </div>
-            </motion.div>
 
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-            >
+              {/* Contact Form */}
               <ContactForm />
             </motion.div>
           </div>

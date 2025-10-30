@@ -18,7 +18,7 @@ export default function EqdentLanding() {
       <header className="bg-slate-950 border-slate-800">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
-            <div className="relative h-20 w-60">
+            <div className="relative h-20 w-70">
               <Image
                 src="/eqdentlogo.png"
                 alt="Eqdent Logo"
@@ -75,7 +75,7 @@ export default function EqdentLanding() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
               className="space-y-8 py-20"
             >
-              <div className="relative h-20 w-56">
+              <div className="relative h-20 w-70">
                 <Image
                   src="https://vhtnlfbnq3ecybmn.public.blob.vercel-storage.com/mark/eqdent_logo.png"
                   alt="EqDent Logo"
