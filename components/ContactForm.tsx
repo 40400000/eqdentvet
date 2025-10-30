@@ -30,7 +30,7 @@ export function ContactForm({
       const result = await submitWaitlistForm(formData)
       setSubmitMessage(result.message)
     } catch (error) {
-      setSubmitMessage("Er is een fout opgetreden. Probeer het opnieuw.")
+      setSubmitMessage("Er is een fout opgetereden. Probeer het opnieuw.")
     } finally {
       setIsSubmitting(false)
     }
