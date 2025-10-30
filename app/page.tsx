@@ -230,7 +230,7 @@ export default function EqdentLanding() {
         </div>
       </motion.section>
       {/* Testimonials Section */}
-      <motion.section
+      {/* <motion.section
         id="testimonials"
         className="bg-white py-20"
         initial={{ opacity: 0, y: 20 }}
@@ -301,10 +301,10 @@ export default function EqdentLanding() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* FAQ Section */}
-      <DutchFAQSection />
+      {/* <DutchFAQSection /> */}
 
       {/* Contact Section */}
       <motion.section
