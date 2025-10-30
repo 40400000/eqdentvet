@@ -21,7 +21,8 @@ export function ContactForm({
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState("")
-  const [sameAsHome, setSameAsHome] = useState(true)
+  const [sameAsHome, setSameAsHome] = useState(false)
+  const [address, setAddress] = useState("")
 
   const handleSubmit = async (formData: FormData) => {
     setIsSubmitting(true)
@@ -83,6 +84,21 @@ export function ContactForm({
           </div>
 
           <div className="space-y-2">
+            <Label htmlFor="address" className="text-slate-700 font-medium">
+              Adres *
+            </Label>
+            <Input
+              id="address"
+              name="address"
+              placeholder="Straat, huisnummer, postcode, plaats"
+              required
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white"
+            />
+          </div>
+
+          <div className="space-y-2">
             <Label htmlFor="email" className="text-slate-700 font-medium">
               E-mailadres *
             </Label>
@@ -112,8 +128,8 @@ export function ContactForm({
 
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <Label htmlFor="location" className="text-slate-700 font-medium">
-                Behandellocatie (adres van het paard) *
+              <Label htmlFor="stalAddress" className="text-slate-700 font-medium">
+                Staladres *
               </Label>
               <div className="flex items-center gap-2">
                 <input
@@ -124,33 +140,20 @@ export function ContactForm({
                   className="w-4 h-4 text-blue-600 bg-slate-50 border-slate-300 rounded focus:ring-blue-500"
                 />
                 <Label htmlFor="sameAsHome" className="text-sm text-slate-600">
-                  Hetzelfde als uw thuisadres
+                  Zelfde als thuisadres
                 </Label>
               </div>
             </div>
             <Input
-              id="location"
-              name="location"
+              id="stalAddress"
+              name="stalAddress"
               placeholder="Straat, huisnummer, postcode, plaats"
               required
-              className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white"
+              value={sameAsHome ? address : ""}
+              disabled={sameAsHome}
+              className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white disabled:bg-slate-100 disabled:text-slate-600"
             />
           </div>
-
-          {!sameAsHome && (
-            <div className="space-y-2">
-              <Label htmlFor="homeAddress" className="text-slate-700 font-medium">
-                Thuisadres *
-              </Label>
-              <Input
-                id="homeAddress"
-                name="homeAddress"
-                placeholder="Straat, huisnummer, postcode, plaats"
-                required={!sameAsHome}
-                className="bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:bg-white"
-              />
-            </div>
-          )}
 
           <div className="pt-4">
             <Button

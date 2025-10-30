@@ -94,14 +94,6 @@ export default function ContactPage() {
                         Ambulant (mobiel) in regio Veluwe.
                       </p>
                       <div className="mt-4">
-                        <iframe 
-                          src="https://commutetimemap.com/embedded?places=52.434043%253B6.079267%253B1%253B2400%253B%25234143f4&operation=none" 
-                          name="commuteTimeMapIFrame" 
-                          height="400" 
-                          width="100%"
-                          className="rounded-lg border border-slate-200"
-                          style={{ border: 'none' }}
-                        />
                       </div>
                     </div>
                   </div>
