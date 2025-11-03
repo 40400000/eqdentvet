@@ -11,7 +11,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar showLogo={true} />
+      <Navbar />
 
       <div className="container mx-auto px-4 py-12 pt-32">
         <div className="max-w-6xl mx-auto">
@@ -115,7 +115,7 @@ export default function ContactPage() {
           <div className="text-center">
             <Link href="/" className="relative h-14 w-56 mx-auto mb-4 block">
               <Image
-                src="/eqdentlogo.png"
+                src="/eqdent_donker.png"
                 alt="EQDent Logo"
                 fill
                 className="object-contain cursor-pointer"

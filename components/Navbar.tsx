@@ -50,9 +50,9 @@ export function Navbar() {
               </div>
               <div className="h-6 w-px bg-primary/30"></div>
               <div className="flex items-center gap-2 text-sm">
-                <button className="text-primary font-semibold hover:opacity-70 transition-opacity">NL</button>
+                <button className="text-primary font-semibold hover:opacity-70 transition-opacity cursor-pointer">NL</button>
                 <span className="text-primary/60">|</span>
-                <button className="text-primary/70 hover:text-primary transition-colors">EN</button>
+                <button className="text-primary/70 hover:text-primary transition-colors cursor-pointer">EN</button>
               </div>
               <Link
                 href="/contact"
@@ -65,7 +65,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-3 rounded-lg text-primary hover:bg-accent/50 transition-all duration-200"
+              className="lg:hidden p-3 rounded-lg text-primary hover:bg-accent/50 transition-all duration-200 cursor-pointer"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -109,7 +109,7 @@ export function Navbar() {
                   </Link>
                   <button
                     onClick={closeMenu}
-                    className="p-2 rounded-lg text-primary hover:bg-accent/50 transition-all duration-200"
+                    className="p-2 rounded-lg text-primary hover:bg-accent/50 transition-all duration-200 cursor-pointer"
                     aria-label="Close menu"
                   >
                     <X size={20} />
