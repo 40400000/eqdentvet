@@ -45,71 +45,97 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* EQDent New Color Palette - Professional, Natural, Calming */
+  --background: #FFFFFF;
+  --foreground: #2D2D2D;
+  --card: #FFFFFF;
+  --card-foreground: #2D2D2D;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D2D2D;
+  --primary: #4C8A65;           /* EQDent Green - hoofdkleur */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4F5F3;         /* Light Grey - subtiele scheiding */
+  --secondary-foreground: #2D2D2D;
+  --muted: #F7FBF9;            /* Soft White Green - tertiaire achtergrond */
+  --muted-foreground: #5B5B5B;  /* Neutral Grey - lichaamstekst */
+  --accent: #E8F3EC;           /* Light Green Variant - achtergrondvlakken */
+  --accent-foreground: #3C6D51; /* Dark Green Variant - contrast tekst */
+  --destructive: #C15B4D;      /* Warm Red Brown - vriendelijker error kleur */
+  --border: #F4F5F3;           /* Light Grey - borders */
+  --input: #F7FBF9;            /* Soft White Green - input backgrounds */
+  --ring: #4C8A65;             /* EQDent Green - focus ring */
+  --success: #6EB785;          /* Soft Success Green */
+  --warning: #D8CBB2;          /* Warm Sand Beige */
+  --chart-1: #4C8A65;          /* EQDent Green */
+  --chart-2: #9FAEAA;          /* Cool Blue Grey */
+  --chart-3: #D8CBB2;          /* Warm Sand Beige */
+  --chart-4: #6EB785;          /* Soft Success Green */
+  --chart-5: #3C6D51;          /* Dark Green Variant */
+  --sidebar: #F7FBF9;          /* Soft White Green */
+  --sidebar-foreground: #2D2D2D;
+  --sidebar-primary: #4C8A65;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E8F3EC;
+  --sidebar-accent-foreground: #3C6D51;
+  --sidebar-border: #F4F5F3;
+  --sidebar-ring: #4C8A65;
+  /* Additional EQDent specific colors */
+  --eqdent-green: #4C8A65;     /* Primair groen (logo) */
+  --eqdent-green-dark: #3C6D51; /* Donker variant (contrast) */
+  --eqdent-green-light: #E8F3EC; /* Lichte variant (vlak/achtergrond) */
+  --eqdent-blue-grey: #9FAEAA;  /* Koel blauwgrijs */
+  --eqdent-beige: #D8CBB2;      /* Warm zandbeige */
+  --eqdent-white-green: #F7FBF9; /* Zacht witgroen */
+  --eqdent-light-grey: #F4F5F3;  /* Lichtgrijs */
+  --eqdent-text-grey: #5B5B5B;   /* Neutraal grijs tekstbasis */
+  --eqdent-dark-grey: #2D2D2D;   /* Donkergrijs accent */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* EQDent Dark Mode Color Palette - Natural & Professional */
+  --background: #2D2D2D;
+  --foreground: #FFFFFF;
+  --card: #3C6D51;
+  --card-foreground: #FFFFFF;
+  --popover: #3C6D51;
+  --popover-foreground: #FFFFFF;
+  --primary: #6EB785;          /* Soft Success Green for dark mode */
+  --primary-foreground: #2D2D2D;
+  --secondary: #5B5B5B;
+  --secondary-foreground: #FFFFFF;
+  --muted: #3C6D51;            /* Dark Green Variant */
+  --muted-foreground: #F4F5F3;
+  --accent: #4C8A65;           /* EQDent Green */
+  --accent-foreground: #FFFFFF;
+  --destructive: #C15B4D;      /* Consistent warm error color */
+  --border: rgba(244, 245, 243, 0.1);
+  --input: rgba(244, 245, 243, 0.15);
+  --ring: #6EB785;
+  --success: #6EB785;
+  --warning: #D8CBB2;
+  --chart-1: #6EB785;
+  --chart-2: #9FAEAA;
+  --chart-3: #D8CBB2;
+  --chart-4: #4C8A65;
+  --chart-5: #3C6D51;
+  --sidebar: #3C6D51;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #6EB785;
+  --sidebar-primary-foreground: #2D2D2D;
+  --sidebar-accent: #4C8A65;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(244, 245, 243, 0.1);
+  --sidebar-ring: #6EB785;
+  /* Dark mode specific EQDent colors */
+  --eqdent-green: #6EB785;
+  --eqdent-green-dark: #4C8A65;
+  --eqdent-green-light: #3C6D51;
+  --eqdent-blue-grey: #9FAEAA;
+  --eqdent-beige: #D8CBB2;
+  --eqdent-white-green: #3C6D51;
+  --eqdent-light-grey: rgba(244, 245, 243, 0.1);
+  --eqdent-text-grey: #F4F5F3;
+  --eqdent-dark-grey: #FFFFFF;
 }
 
 @layer base {

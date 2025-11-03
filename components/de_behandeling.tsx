@@ -3,69 +3,61 @@ import { CheckCircle } from "lucide-react"
 
 export function BehandelingSection() {
   return (
-    <section id="behandeling" className="py-16 lg:py-24">
+    <section id="behandeling" className="py-16 lg:py-24" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
       <div className="container mx-auto px-6 lg:px-16">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block mb-6">
-            <span className="text-xs uppercase tracking-wider text-orange-500 font-semibold bg-orange-50 px-3 py-1 rounded-full">
-              Aanpak
-            </span>
-          </div>
-          <h2 className="text-3xl font-light text-blue-900 mb-6">Periodieke zorg</h2>
+          <h2 className="text-3xl font-light text-primary mb-6">Periodieke zorg</h2>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-5 gap-8">
             <div className="md:col-span-3">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Regelmatige gebitscontroles zijn essentieel voor de gezondheid en prestaties van uw paard. 
-                  Paardentanden groeien continu en kunnen zonder regelmatige zorg scherpe randen, haken en 
-                  andere problemen ontwikkelen die pijn, eetproblemen en gedragsissues veroorzaken.
+              <div className="bg-background p-8 rounded-xl shadow-sm border border-border mb-8">
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Goede paardentandheelkunde vraagt meer dan techniek alleen.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Ik kom naar uw locatie voor een stressvrije behandeling. Na lichte sedatie wordt het gebit 
-                  grondig onderzocht en gecorrigeerd met moderne apparatuur. Voor complexe behandelingen werk 
-                  ik samen met gespecialiseerde collega's.
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Het vraagt inzicht in de samenhang tussen gebit, voeding, training en gedrag.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Zo ontstaat periodieke zorg die niet alleen gebitsklachten voorkomt of verhelpt, maar ook bijdraagt aan algehele gezondheid, duurzame prestaties en welzijn.
+                </p>
+                <p className="text-muted-foreground leading-relaxed font-medium mt-6">
+                  EQDent draagt daarmee zorg voor jouw verbinding met je paard.
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-xl font-medium text-blue-900 mb-4">Wat gebeurt er tijdens een behandeling?</h3>
+              <div className="bg-background p-8 rounded-xl shadow-sm border border-border">
+                <h3 className="text-xl font-medium text-primary mb-4">Wat gebeurt er tijdens een behandeling?</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-orange-500 flex-shrink-0" />
-                    <p className="text-gray-600">
-                      <span className="font-medium text-blue-900">Grondige inspectie:</span> Elk paard wordt zorgvuldig 
-                      onderzocht, zodat wij samen kunnen kijken wat het gebit nodig heeft.
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <p className="text-muted-foreground">
+                      <span className="font-medium text-primary">Grondige inspectie:</span> Elk paard wordt zorgvuldig onderzocht, zodat wij samen kunnen kijken wat het gebit nodig heeft. Bij deze inspectie wordt standaard gebruik gemaakt van sedatie.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-orange-500 flex-shrink-0" />
-                    <p className="text-gray-600">
-                      <span className="font-medium text-blue-900">Correctie en balanceren:</span> Het gebit balanceren 
-                      en corrigeren waar nodig, zoals het verwijderen van scherpe punten en misvormingen.
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <p className="text-muted-foreground">
+                      <span className="font-medium text-primary">Onderzoek afwijkingen:</span> De bevindingen en behandelopties worden altijd grondig onderzocht, duidelijk besproken en in beeld gebracht.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-orange-500 flex-shrink-0" />
-                    <p className="text-gray-600">
-                      <span className="font-medium text-blue-900">Onderzoek afwijkingen:</span> Identificatie van vroege 
-                      veranderingen zoals cariës, gaten tussen tanden of ontwikkelingsproblemen met behandelopties.
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <p className="text-muted-foreground">
+                      <span className="font-medium text-primary">Correcties:</span> Een gezond en functioneel gebit begint bij een onbelemmerde en pijnvrije kauwbeweging. Afwijkingen in tand- en kiesslijtage worden met precisie en aandacht gecorrigeerd.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-orange-500 flex-shrink-0" />
-                    <p className="text-gray-600">
-                      <span className="font-medium text-blue-900">Behandeling kleine problemen:</span> Problemen die 
-                      veilig tijdens de afspraak kunnen worden aangepakt, worden direct behandeld.
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <p className="text-muted-foreground">
+                      <span className="font-medium text-primary">Behandeling overige afwijkingen:</span> Problemen die veilig tijdens de afspraak kunnen worden aangepakt, worden direct behandeld. Grotere of complexe problemen vragen om zorg die nader onderzoek en behandeling tijdens een vervolgafspraak vereist.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-orange-500 flex-shrink-0" />
-                    <p className="text-gray-600">
-                      <span className="font-medium text-blue-900">Preventieve zorg:</span> Advies en vroege interventie 
-                      om te voorkomen dat kleine problemen uitgroeien tot ernstige aandoeningen.
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <p className="text-muted-foreground">
+                      <span className="font-medium text-primary">Documentatie:</span> Je ontvangt na de behandeling een uitgebreid en duidelijk verslag van de bevindingen, de behandeling en tips voor verzorging en management.
                     </p>
                   </li>
                 </ul>
@@ -82,33 +74,25 @@ export function BehandelingSection() {
                     className="object-cover"
                   />
                 </div>
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <h3 className="text-lg font-medium text-blue-900 mb-4">Wist u dat?</h3>
+                <div className="p-6 rounded-xl" style={{backgroundColor: 'var(--eqdent-green-light)'}}>
+                  <h3 className="text-lg font-medium text-primary mb-4">EQDent</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-orange-500 text-xs font-medium">1</span>
-                      </div>
-                      <p className="text-gray-600 text-sm">
-                        Paarden kunnen tot 40-42 tanden hebben, inclusief snijtanden, hoektanden, premolaren en
-                        molaren.
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-muted-foreground text-sm">
+                        <strong>EQDent</strong> is gedreven om paarden zo lang mogelijk met een functioneel, pijnvrij en compleet gebit te laten leven.
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-orange-500 text-xs font-medium">2</span>
-                      </div>
-                      <p className="text-gray-600 text-sm">
-                        De tanden van een paard groeien hun hele leven door, ongeveer 2-3 mm per jaar.
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-muted-foreground text-sm">
+                        <strong>EQDent</strong> wordt gedragen door meer dan 15 jaar ervaring op het gebied van tandheelkunde bij paarden.
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-orange-500 text-xs font-medium">3</span>
-                      </div>
-                      <p className="text-gray-600 text-sm">
-                        Paarden kauwen in een cirkelvormige beweging, wat kan leiden tot ongelijkmatige slijtage als
-                        het gebit niet regelmatig wordt gecontroleerd.
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-muted-foreground text-sm">
+                        <strong>EQDent</strong> stopt niet waar anderen opgeven.
                       </p>
                     </li>
                   </ul>
