@@ -6,7 +6,7 @@ export function GeavanceerdeIngrepenSection() {
     <section id="geavanceerde-ingrepen" className="py-16 lg:py-24 bg-accent">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="max-w-3xl mx-auto text-center mb-16">
-p
+
           <h2 className="text-3xl font-light text-primary mb-6">Expertise zorg</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Voor complexe tandheelkundige problemen bieden wij geavanceerde behandelingen 

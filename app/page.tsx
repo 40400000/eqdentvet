@@ -32,7 +32,7 @@ export default function EqdentLanding() {
       <Navbar showLogo={hasScrolled} />
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-64px)] pt-4 lg:pt-16" style={{background: 'linear-gradient(135deg, var(--eqdent-green) 0%, var(--eqdent-green-dark) 100%)'}}>
+      <section className="relative min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-64px)] pt-4 lg:pt-16" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
         <div className="container mx-auto px-4 h-full">
           <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 min-h-[calc(100vh-120px)] lg:min-h-[calc(100vh-64px)] items-start lg:items-center py-4 lg:py-0">
             {/* Left Content */}
@@ -59,29 +59,29 @@ export default function EqdentLanding() {
                     className="object-contain object-left"
                   />
                 </div>
-                <p className="text-white/80 text-lg font-light tracking-wide">Tandheelkundige zorg voor paarden</p>
+                <p className="text-muted-foreground text-lg font-light tracking-wide">Tandheelkundige zorg voor paarden</p>
               </motion.div>
               
               {/* Mobile tagline */}
-              <p className="lg:hidden text-white/80 text-lg font-light tracking-wide mb-4">Tandheelkundige zorg voor paarden</p>
+              <p className="lg:hidden text-muted-foreground text-lg font-light tracking-wide mb-4">Tandheelkundige zorg voor paarden</p>
               
               {/* Kernwoorden */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-white font-semibold text-lg">Expertise</span>
+                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <span className="text-primary font-semibold text-lg">Expertise</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-white font-semibold text-lg">Aandacht</span>
+                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <span className="text-primary font-semibold text-lg">Aandacht</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-white font-semibold text-lg">Zorg</span>
+                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <span className="text-primary font-semibold text-lg">Zorg</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-white font-semibold text-lg">Vertrouwen</span>
+                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <span className="text-primary font-semibold text-lg">Vertrouwen</span>
                 </div>
               </div>
               
-              <h2 className="text-3xl md:text-4xl text-white leading-tight font-light">
+              <h2 className="text-3xl md:text-4xl text-foreground leading-tight font-light">
                 Professionele paardentandheelkunde - bij het paard thuis
               </h2>
               

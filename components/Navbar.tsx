@@ -162,7 +162,7 @@ export function Navbar({ showLogo = true }: NavbarProps) {
                       className="text-lg font-medium text-white py-3 px-4 rounded-lg text-center mt-4"
                       style={{backgroundColor: 'var(--eqdent-green)'}}
                     >
-                      Contact
+                      Inschrijven en afspraak maken
                     </Link>
                   </div>
                 </nav>
