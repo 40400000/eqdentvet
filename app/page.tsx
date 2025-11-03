@@ -343,12 +343,6 @@ export default function EqdentLanding() {
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
                 Binnen twee werkdagen wordt er contact met u opgenomen.
               </p>
-              <div className="rounded-lg p-6 mt-8 max-w-2xl mx-auto" style={{backgroundColor: 'var(--eqdent-beige)'}}>
-                <h3 className="text-xl font-medium mb-4" style={{color: 'var(--eqdent-green-dark)'}}>Werkgebied</h3>
-                <p style={{color: 'var(--eqdent-dark-grey)'}}>
-                  <strong>35 minuten vanaf Wezep.</strong> Woont u verder weg, dan bespreken we graag de mogelijkheden.
-                </p>
-              </div>
             </div>
 
             <ContactForm showHeader={false} />

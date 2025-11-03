@@ -154,9 +154,9 @@ export function Navbar() {
                 {/* Language Switcher */}
                 <div className="px-6 pb-8 border-t pt-6" style={{borderColor: 'var(--eqdent-light-grey)'}}>
                   <div className="flex items-center gap-3 justify-center text-sm">
-                    <button className="font-medium px-3 py-2 rounded-md" style={{color: 'var(--eqdent-green)', backgroundColor: 'var(--eqdent-green-light)'}}>NL</button>
+                    <button className="font-medium px-3 py-2 rounded-md cursor-pointer" style={{color: 'var(--eqdent-green)', backgroundColor: 'var(--eqdent-green-light)'}}>NL</button>
                     <span className="text-muted-foreground">|</span>
-                    <button className="text-muted-foreground hover:text-primary transition-all duration-200 px-3 py-2 rounded-md hover:bg-accent/30">EN</button>
+                    <button className="text-muted-foreground hover:text-primary transition-all duration-200 px-3 py-2 rounded-md hover:bg-accent/30 cursor-pointer">EN</button>
                   </div>
                 </div>
               </div>

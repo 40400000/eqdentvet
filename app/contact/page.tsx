@@ -49,7 +49,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1" style={{color: 'var(--eqdent-dark-grey)'}}>Telefoon</h3>
                       <p className="mb-2" style={{color: 'var(--eqdent-text-grey)'}}>Voor afspraken en expertise zorg</p>
-                      <a href="tel:06-12345678" className="font-medium hover:opacity-80 transition-opacity" style={{color: 'var(--eqdent-green)'}}>
+                      <a href="tel:06-12345678" className="font-medium hover:opacity-80 transition-opacity cursor-pointer" style={{color: 'var(--eqdent-green)'}}>
                         06-12345678
                       </a>
                     </div>
@@ -62,25 +62,12 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1" style={{color: 'var(--eqdent-dark-grey)'}}>E-mail</h3>
                       <p className="mb-2" style={{color: 'var(--eqdent-text-grey)'}}>Voor algemene vragen en informatie</p>
-                      <a href="mailto:contact@eqdent.nl" className="font-medium hover:opacity-80 transition-opacity" style={{color: 'var(--eqdent-green)'}}>
+                      <a href="mailto:contact@eqdent.nl" className="font-medium hover:opacity-80 transition-opacity cursor-pointer" style={{color: 'var(--eqdent-green)'}}>
                         contact@eqdent.nl
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{backgroundColor: 'var(--eqdent-green)'}}>
-                      <MapPin className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold mb-1" style={{color: 'var(--eqdent-dark-grey)'}}>Werkgebied</h3>
-                      <p className="mb-4" style={{color: 'var(--eqdent-text-grey)'}}>
-                        <strong>35 minuten vanaf Wezep.</strong> Woont u verder weg, dan bespreken we graag de mogelijkheden.
-                      </p>
-                      <div className="mt-4">
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
 

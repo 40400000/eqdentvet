@@ -137,9 +137,9 @@ export function ContactForm({
                   id="sameAsHome"
                   checked={sameAsHome}
                   onChange={(e) => setSameAsHome(e.target.checked)}
-                  className="w-4 h-4 text-primary bg-muted border-border rounded focus:ring-primary"
+                  className="w-4 h-4 text-primary bg-muted border-border rounded focus:ring-primary cursor-pointer"
                 />
-                <Label htmlFor="sameAsHome" className="text-sm text-muted-foreground">
+                <Label htmlFor="sameAsHome" className="text-sm text-muted-foreground cursor-pointer">
                   Zelfde als thuisadres
                 </Label>
               </div>
@@ -153,6 +153,19 @@ export function ContactForm({
               disabled={sameAsHome}
               className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white disabled:bg-muted disabled:text-muted-foreground"
             />
+          </div>
+
+          {/* Werkgebied notification */}
+          <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-slate-400 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="text-sm font-medium text-slate-700 mb-1">Werkgebied</h4>
+                <p className="text-sm text-slate-600">
+                  35 minuten vanaf Wezep. Woont u verder weg, dan bespreken we graag de mogelijkheden.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="pt-4">
