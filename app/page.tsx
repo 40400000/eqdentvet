@@ -73,7 +73,7 @@ export default function EqdentLanding() {
                 </div>
 
                 <div className="flex items-center">
-                  <p className="text-3xl font-medium text-foreground sm:text-4xl">35km</p>
+                  <p className="text-3xl font-medium text-foreground sm:text-4xl">35 min</p>
                   <p className="ml-3 text-sm text-muted-foreground">Werkgebied<br />Vanaf Wezep</p>
                 </div>
               </div>
