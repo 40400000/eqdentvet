@@ -3,7 +3,7 @@ import { CheckCircle, AlertTriangle } from "lucide-react"
 
 export function GeavanceerdeIngrepenSection() {
   return (
-    <section id="geavanceerde-ingrepen" className="py-16 lg:py-24 bg-accent">
+    <section id="geavanceerde-ingrepen" className="py-16 lg:py-24" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
       <div className="container mx-auto px-6 lg:px-16">
         <div className="max-w-3xl mx-auto text-center mb-16">
 
@@ -81,62 +81,64 @@ export function GeavanceerdeIngrepenSection() {
                   />
                 </div>
                 
-                <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-xl">
-                  <div className="flex items-center gap-3 mb-4">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <h3 className="text-lg font-medium text-green-900">Waarom EQDent?</h3>
-                  </div>
-                  <div className="space-y-3">
-                    <p className="text-green-800 text-sm">
-                      <strong>Direct beschikbaar:</strong> Complexe behandelingen zonder 
-                      wachttijd of doorverwijzing.
-                    </p>
-
-                    <p className="text-green-800 text-sm">
-                      <strong>Moderne apparatuur:</strong> Beschikking over de nieuwste 
-                      tandheelkundige technologie.
-                    </p>
-                    <p className="text-green-800 text-sm">
-                      <strong>Ambulante zorg:</strong> Geavanceerde behandelingen bij u 
-                      thuis in vertrouwde omgeving.
-                    </p>
-                  </div>
+                <div className="p-6 rounded-xl" style={{backgroundColor: 'var(--eqdent-green-light)'}}>
+                  <h3 className="text-lg font-medium text-primary mb-4">EQDent</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-muted-foreground text-sm">
+                        <strong>EQDent</strong> biedt complexe behandelingen direct beschikbaar zonder wachttijd of doorverwijzing.
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-muted-foreground text-sm">
+                        <strong>EQDent</strong> beschikt over de nieuwste tandheelkundige technologie en moderne apparatuur.
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-muted-foreground text-sm">
+                        <strong>EQDent</strong> voert geavanceerde behandelingen uit bij u thuis in een vertrouwde omgeving.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 p-8 rounded-xl">
+          <div className="bg-background border border-border p-8 rounded-xl">
             <div className="text-center">
               <h3 className="text-xl font-medium text-primary mb-4">
                 Wanneer zijn geavanceerde ingrepen nodig?
               </h3>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div className="text-center">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{backgroundColor: 'var(--eqdent-beige)'}}>
-                    <span className="text-primary font-bold">1</span>
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-3">
+                    <span className="text-accent-foreground font-bold">1</span>
                   </div>
-                  <p className="text-primary">
+                  <p className="text-foreground">
                     <strong>Complexe extracties</strong><br />
-                    Gebroken tanden, diepe wortels, of moeilijk bereikbare kiezen
+                    <span className="text-muted-foreground">Gebroken tanden, diepe wortels, of moeilijk bereikbare kiezen</span>
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{backgroundColor: 'var(--eqdent-beige)'}}>
-                    <span className="text-primary font-bold">2</span>
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-3">
+                    <span className="text-accent-foreground font-bold">2</span>
                   </div>
-                  <p className="text-primary">
+                  <p className="text-foreground">
                     <strong>Ernstige infecties</strong><br />
-                    Abcessen, sinusinfecties, of uitgebreide parodontale ziekte
+                    <span className="text-muted-foreground">Abcessen, sinusinfecties, of uitgebreide parodontale ziekte</span>
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{backgroundColor: 'var(--eqdent-beige)'}}>
-                    <span className="text-primary font-bold">3</span>
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-3">
+                    <span className="text-accent-foreground font-bold">3</span>
                   </div>
-                  <p className="text-primary">
+                  <p className="text-foreground">
                     <strong>Structurele problemen</strong><br />
-                    Kaakfracturen, ernstige malocclusies, of grote caviteiten
+                    <span className="text-muted-foreground">Kaakfracturen, ernstige malocclusies, of grote caviteiten</span>
                   </p>
                 </div>
               </div>

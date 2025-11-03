@@ -162,7 +162,7 @@ export function ContactForm({
               size="lg"
               className="w-full text-white py-4 text-lg font-medium hover:opacity-90 transition-opacity" style={{backgroundColor: 'var(--eqdent-green)'}}
             >
-              {isSubmitting ? "Bezig met verzenden..." : "Afspraak aanvragen"}
+              {isSubmitting ? "Bezig met verzenden..." : "Inschrijven en afspraak maken"}
               {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
             </Button>
           </div>

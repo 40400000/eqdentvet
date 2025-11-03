@@ -29,86 +29,71 @@ export default function EqdentLanding() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar showLogo={hasScrolled} />
+      <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-64px)] pt-4 lg:pt-16" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
-        <div className="container mx-auto px-4 h-full">
-          <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 min-h-[calc(100vh-120px)] lg:min-h-[calc(100vh-64px)] items-start lg:items-center py-4 lg:py-0">
-            {/* Left Content */}
+      <section className="pt-20 pb-12 sm:pb-16 lg:pt-24" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
-              className="space-y-4 lg:space-y-6 py-4 lg:py-12"
             >
-              <motion.div 
-                className="hidden lg:block mb-6"
-                initial={{ opacity: 1, y: 0 }}
-                animate={{ 
-                  opacity: hasScrolled ? 0 : 1,
-                  y: hasScrolled ? -30 : 0
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="relative h-24 w-80 lg:h-32 lg:w-96 mb-4">
-                  <Image
-                    src="/eqdentlogo.png"
-                    alt="EQDent Logo"
-                    fill
-                    className="object-contain object-left"
-                  />
-                </div>
-                <p className="text-muted-foreground text-lg font-light tracking-wide">Tandheelkundige zorg voor paarden</p>
-              </motion.div>
-              
-              {/* Mobile tagline */}
-              <p className="lg:hidden text-muted-foreground text-lg font-light tracking-wide mb-4">Tandheelkundige zorg voor paarden</p>
-              
-              {/* Kernwoorden */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-8">
-                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-primary font-semibold text-lg">Expertise</span>
-                </div>
-                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-primary font-semibold text-lg">Aandacht</span>
-                </div>
-                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-primary font-semibold text-lg">Zorg</span>
-                </div>
-                <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <span className="text-primary font-semibold text-lg">Vertrouwen</span>
+              <div className="text-center lg:text-left">
+                <h1 className="text-4xl font-light leading-tight text-foreground sm:text-5xl sm:leading-tight lg:leading-tight lg:text-6xl">
+                  Professionele paardentandheelkunde bij het paard thuis
+                </h1>
+                <p className="mt-2 text-lg text-muted-foreground sm:mt-8">
+                  <span className="font-medium">Expertise • Aandacht • Zorg</span><br />
+                  Tandheelkundige expertise op locatie met dezelfde aandacht en precisie als in een klinische setting. Voor het welzijn en de duurzame prestaties van uw paard.
+                </p>
+
+                <div className="mt-8 sm:mt-10">
+                  <Button
+                    size="lg"
+                    className="inline-flex px-8 py-4 text-lg font-medium text-white transition-all duration-200 rounded-lg focus:outline-none hover:opacity-90"
+                    style={{backgroundColor: 'var(--eqdent-green-dark)'}}
+                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    Inschrijven en afspraak maken
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
                 </div>
               </div>
-              
-              <h2 className="text-3xl md:text-4xl text-foreground leading-tight font-light">
-                Professionele paardentandheelkunde - bij het paard thuis
-              </h2>
-              
-              <Button
-                size="lg"
-                className="text-white px-8 py-4 text-lg hover:opacity-90 transition-opacity"
-                style={{backgroundColor: 'var(--eqdent-green-dark)'}}
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Inschrijven en afspraak maken
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+
+              <div className="flex items-center justify-center mt-10 space-x-6 lg:justify-start sm:space-x-8">
+                <div className="flex items-center">
+                  <p className="text-3xl font-medium text-foreground sm:text-4xl">15+</p>
+                  <p className="ml-3 text-sm text-muted-foreground">Jaren<br />Ervaring</p>
+                </div>
+
+                <div className="hidden sm:block">
+                  <div className="text-muted-foreground text-2xl">•</div>
+                </div>
+
+                <div className="flex items-center">
+                  <p className="text-3xl font-medium text-foreground sm:text-4xl">35km</p>
+                  <p className="ml-3 text-sm text-muted-foreground">Werkgebied<br />Vanaf Wezep</p>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Right Image */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeInOut" }}
-              className="relative aspect-[4/3] lg:aspect-square mt-0 lg:mt-0"
+              className="flex justify-center lg:justify-end"
             >
-              <Image
-                src="/3cfb2af6-cc96-4ad1-b965-ca3920d9caef_thumb1920.jpg"
-                alt="Equine dentistry procedure"
-                fill
-                className="object-cover rounded-lg shadow-2xl"
-              />
+              <div className="w-4/5 lg:w-5/6">
+                <Image
+                  src="/3cfb2af6-cc96-4ad1-b965-ca3920d9caef_thumb1920.jpg"
+                  alt="Equine dentistry procedure"
+                  width={500}
+                  height={600}
+                  className="w-full object-cover rounded-lg shadow-xl aspect-[4/5]"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -194,25 +179,61 @@ export default function EqdentLanding() {
       {/* Periodieke Zorg Section */}
       <BehandelingSection />
 
+      {/* Horse Gallery Section */}
+      <motion.section
+        className="py-16" style={{backgroundColor: 'var(--eqdent-white-green)'}}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:h-[500px]">
+            {/* Left column - tall portrait image */}
+            <div className="relative aspect-[2/3] lg:aspect-auto lg:h-full">
+              <Image
+                src="/DTS_LIFE_IN_LILAC_Mar_Boerr_Photos_ID7446.jpg"
+                alt="Horses grazing in peaceful pasture"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+              />
+            </div>
+            
+            {/* Right column - single landscape image */}
+            <div className="lg:col-span-2 lg:h-full">
+              <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
+                <Image
+                  src="/DTS_The_Farm_Richard_Smith_Photos_ID3395.jpg"
+                  alt="Horse in golden morning light"
+                  fill
+                  className="object-cover rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Expertise Zorg Section */}
       <GeavanceerdeIngrepenSection />
 
       <motion.section
-        className="relative py-30" style={{background: 'linear-gradient(135deg, var(--eqdent-green) 0%, var(--eqdent-green-dark) 100%)'}}
+        className="relative py-20"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
         viewport={{ once: true, amount: 0.1 }}
       >
         <Image
-          src="https://fei-fan-production.s3.amazonaws.com/s3fs-public/160920-irish-2.jpg"
+          src="/DTS_The_Farm_Richard_Smith_Photos_ID1358.jpg"
           alt="Horse in a field"
           fill
-          className="absolute inset-0 z-0 object-cover opacity-30"
+          className="absolute inset-0 z-0 object-cover"
         />
+        <div className="absolute inset-0 z-1 bg-primary/20"></div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Sluit je aan bij paardenhouders die kiezen voor persoonlijke tandheelkundige zorg op locatie</h2>
-          <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-10">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10">
             Met de kwaliteit en precisie van kliniekzorg
           </p>
           <Button
@@ -306,7 +327,7 @@ export default function EqdentLanding() {
       {/* Contact Section */}
       <motion.section
         id="contact"
-        className="py-20" style={{backgroundColor: 'var(--eqdent-green-light)'}}
+        className="py-20" style={{backgroundColor: 'var(--eqdent-white-green)'}}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}

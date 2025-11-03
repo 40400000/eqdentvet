@@ -23,7 +23,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl font-light mb-6" style={{color: 'var(--eqdent-green-dark)'}}>Contact</h1>
+            <h1 className="text-4xl font-light mb-6" style={{color: 'var(--eqdent-green-dark)'}}>Inschrijven en afspraak maken</h1>
             <p className="text-xl max-w-3xl mx-auto" style={{color: 'var(--eqdent-text-grey)'}}>
               Neem contact op voor periodieke of expertise tandheelkundige zorg. Wij komen naar uw locatie.
             </p>

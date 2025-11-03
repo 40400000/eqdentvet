@@ -6,74 +6,57 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
-interface NavbarProps {
-  showLogo?: boolean
-}
-
-export function Navbar({ showLogo = true }: NavbarProps) {
+export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   
   const closeMenu = () => setIsMenuOpen(false)
   
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50" style={{background: 'linear-gradient(135deg, var(--eqdent-green) 0%, var(--eqdent-green-dark) 100%)'}}>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <Link href="/" className="relative h-12 w-48 lg:h-14 lg:w-56">
-              {/* Always show on mobile */}
-              <div className="lg:hidden">
-                <Image
-                  src="/eqdentlogo.png"
-                  alt="EQDent Logo"
-                  fill
-                  className="object-contain cursor-pointer"
-                />
-              </div>
-              {/* Conditional on desktop */}
-              {showLogo && (
-                <div className="hidden lg:block">
-                  <Image
-                    src="/eqdentlogo.png"
-                    alt="EQDent Logo"
-                    fill
-                    className="object-contain cursor-pointer"
-                  />
-                </div>
-              )}
+              {/* Always show on all devices */}
+              <Image
+                src="/eqdent_donker.png"
+                alt="EQDent Logo"
+                fill
+                className="object-contain cursor-pointer"
+              />
             </Link>
             
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-4 lg:gap-6">
-              <div className="flex items-center gap-6 text-white text-base">
+              <div className="flex items-center gap-6 text-primary text-base font-medium">
                 <Link
                   href="/#about"
-                  className="hover:text-accent-foreground transition-colors"
+                  className="hover:opacity-70 transition-opacity"
                 >
                   Over ons
                 </Link>
                 <Link
                   href="/#behandeling"
-                  className="hover:text-accent-foreground transition-colors"
+                  className="hover:opacity-70 transition-opacity"
                 >
                   Periodieke zorg
                 </Link>
                 <Link
                   href="/#geavanceerde-ingrepen"
-                  className="hover:text-accent-foreground transition-colors"
+                  className="hover:opacity-70 transition-opacity"
                 >
                   Expertise zorg
                 </Link>
               </div>
-              <div className="h-6 w-px bg-white/30"></div>
+              <div className="h-6 w-px bg-primary/30"></div>
               <div className="flex items-center gap-2 text-sm">
-                <button className="text-white font-semibold hover:text-accent-foreground transition-colors">NL</button>
-                <span className="text-white/60">|</span>
-                <button className="text-white/70 hover:text-white transition-colors">EN</button>
+                <button className="text-primary font-semibold hover:opacity-70 transition-opacity">NL</button>
+                <span className="text-primary/60">|</span>
+                <button className="text-primary/70 hover:text-primary transition-colors">EN</button>
               </div>
               <Link
                 href="/contact"
-                className="text-white hover:text-accent-foreground transition-colors"
+                className="text-primary font-medium hover:opacity-70 transition-opacity"
               >
                 Contact
               </Link>
@@ -82,10 +65,10 @@ export function Navbar({ showLogo = true }: NavbarProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-white hover:text-accent-foreground transition-colors"
+              className="lg:hidden p-3 rounded-lg text-primary hover:bg-accent/50 transition-all duration-200"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -109,15 +92,16 @@ export function Navbar({ showLogo = true }: NavbarProps) {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 20, stiffness: 100 }}
-              className="fixed top-0 right-0 h-full w-full max-w-sm bg-white shadow-xl z-50 lg:hidden"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="fixed top-0 right-0 h-full w-full max-w-sm z-50 lg:hidden shadow-2xl"
+              style={{backgroundColor: 'var(--eqdent-white-green)'}}
             >
               <div className="flex flex-col h-full">
                 {/* Menu Header */}
-                <div className="flex items-center justify-between p-4" style={{background: 'linear-gradient(135deg, var(--eqdent-green) 0%, var(--eqdent-green-dark) 100%)'}}>
-                  <Link href="/" onClick={closeMenu} className="relative h-12 w-48">
+                <div className="flex items-center justify-between p-6 border-b" style={{borderColor: 'var(--eqdent-light-grey)'}}>
+                  <Link href="/" onClick={closeMenu} className="relative h-10 w-40">
                     <Image
-                      src="/eqdentlogo.png"
+                      src="/eqdent_donker.png"
                       alt="EQDent Logo"
                       fill
                       className="object-contain"
@@ -125,42 +109,42 @@ export function Navbar({ showLogo = true }: NavbarProps) {
                   </Link>
                   <button
                     onClick={closeMenu}
-                    className="p-2 text-white hover:text-accent-foreground transition-colors"
+                    className="p-2 rounded-lg text-primary hover:bg-accent/50 transition-all duration-200"
                     aria-label="Close menu"
                   >
-                    <X size={24} />
+                    <X size={20} />
                   </button>
                 </div>
                 
                 {/* Menu Links */}
-                <nav className="flex-1 px-4 py-6">
-                  <div className="flex flex-col gap-4">
+                <nav className="flex-1 px-6 py-8">
+                  <div className="flex flex-col gap-1">
                     <Link
                       href="/#about"
                       onClick={closeMenu}
-                      className="text-lg font-medium text-gray-700 hover:text-primary transition-colors py-2"
+                      className="text-base font-light text-foreground hover:text-primary transition-all duration-200 py-4 px-3 rounded-lg hover:bg-accent/50"
                     >
                       Over ons
                     </Link>
                     <Link
                       href="/#behandeling"
                       onClick={closeMenu}
-                      className="text-lg font-medium text-gray-700 hover:text-primary transition-colors py-2"
+                      className="text-base font-light text-foreground hover:text-primary transition-all duration-200 py-4 px-3 rounded-lg hover:bg-accent/50"
                     >
                       Periodieke zorg
                     </Link>
                     <Link
                       href="/#geavanceerde-ingrepen"
                       onClick={closeMenu}
-                      className="text-lg font-medium text-gray-700 hover:text-primary transition-colors py-2"
+                      className="text-base font-light text-foreground hover:text-primary transition-all duration-200 py-4 px-3 rounded-lg hover:bg-accent/50"
                     >
                       Expertise zorg
                     </Link>
                     <Link
                       href="/contact"
                       onClick={closeMenu}
-                      className="text-lg font-medium text-white py-3 px-4 rounded-lg text-center mt-4"
-                      style={{backgroundColor: 'var(--eqdent-green)'}}
+                      className="text-base font-medium text-white py-4 px-6 rounded-lg text-center mt-6 transition-all duration-200 hover:opacity-90 shadow-sm"
+                      style={{backgroundColor: 'var(--eqdent-green-dark)'}}
                     >
                       Inschrijven en afspraak maken
                     </Link>
@@ -168,11 +152,11 @@ export function Navbar({ showLogo = true }: NavbarProps) {
                 </nav>
                 
                 {/* Language Switcher */}
-                <div className="px-4 pb-6 border-t pt-4">
-                  <div className="flex items-center gap-2 justify-center text-sm">
-                    <button className="font-semibold" style={{color: 'var(--eqdent-green)'}}>NL</button>
-                    <span className="text-gray-400">|</span>
-                    <button className="text-gray-500 hover:text-gray-700 transition-colors">EN</button>
+                <div className="px-6 pb-8 border-t pt-6" style={{borderColor: 'var(--eqdent-light-grey)'}}>
+                  <div className="flex items-center gap-3 justify-center text-sm">
+                    <button className="font-medium px-3 py-2 rounded-md" style={{color: 'var(--eqdent-green)', backgroundColor: 'var(--eqdent-green-light)'}}>NL</button>
+                    <span className="text-muted-foreground">|</span>
+                    <button className="text-muted-foreground hover:text-primary transition-all duration-200 px-3 py-2 rounded-md hover:bg-accent/30">EN</button>
                   </div>
                 </div>
               </div>
