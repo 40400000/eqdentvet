@@ -86,7 +86,7 @@ export function GeavanceerdeIngrepenSection() {
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <p className="text-muted-foreground text-sm">
-                                              <strong>EQDent</strong> werkt hard aan de realisatie van een kliniek ruimte om alle expertise zorg te kunnen bieden.
+                                              <strong>EQDent</strong> werkt hard aan de realisatie van een kliniekruimte om alle expertisezorg te kunnen bieden.
 
                       </p>
                     </li>

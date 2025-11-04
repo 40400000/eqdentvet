@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -10,6 +9,7 @@ import { GeavanceerdeIngrepenSection } from "@/components/geavanceerde_ingrepen"
 import { DutchFAQSection } from "@/components/FAQ_Dutch"
 import { ContactForm } from "@/components/ContactForm"
 import { Navbar } from "@/components/Navbar"
+import { Footer } from "@/components/Footer"
 import { useState, useEffect } from "react"
 
 export default function EqdentLanding() {
@@ -87,8 +87,8 @@ export default function EqdentLanding() {
             >
               <div className="w-4/5 lg:w-5/6">
                 <Image
-                  src="/3cfb2af6-cc96-4ad1-b965-ca3920d9caef_thumb1920.jpg"
-                  alt="Equine dentistry procedure"
+                  src="/DTS_The_Farm_Richard_Smith_Photos_ID3394.jpg"
+                  alt="Farm landscape with horses"
                   width={500}
                   height={600}
                   className="w-full object-cover rounded-lg shadow-xl aspect-[4/5]"
@@ -350,23 +350,7 @@ export default function EqdentLanding() {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <section style={{backgroundColor: 'var(--eqdent-green-dark)'}}>
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center">
-            <Link href="/" className="relative h-14 w-56 mx-auto mb-4 block">
-              <Image
-                src="/eqdentlogo.png"
-                alt="EQDent Logo"
-                fill
-                className="object-contain cursor-pointer"
-              />
-            </Link>
-            <p className="text-primary-foreground/80 mb-4">Professionele paardentandheelkunde aan huis</p>
-            <p className="text-sm text-primary-foreground/60">© 2025 EQDent. Alle rechten voorbehouden.</p>
-          </div>
-        </div>
-      </section>
+      <Footer />
 
     </div>
   )

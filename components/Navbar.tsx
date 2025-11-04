@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
-export function Navbar() {
+export function Navbar({ variant = "default" }: { variant?: "default" | "white" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(false)
   const { scrollY } = useScroll()
@@ -21,10 +21,10 @@ export function Navbar() {
   }, [scrollY])
 
   // Transform values for smooth morphing
-  const headerTop = useTransform(scrollY, [0, 50], [0, 12])
-  const headerPadding = useTransform(scrollY, [0, 50], [0, 16])
+  const headerTop = useTransform(scrollY, [0, 50], [16, 12])
+  const headerPadding = useTransform(scrollY, [0, 50], [16, 16])
   const headerWidth = useTransform(scrollY, [0, 50], ["100%", "100%"])
-  const maxWidth = useTransform(scrollY, [0, 50], ["100%", "64rem"])
+  const maxWidth = useTransform(scrollY, [0, 50], ["80rem", "64rem"])
   const borderRadius = useTransform(scrollY, [0, 50], [0, 24])
   const bgOpacity = useTransform(scrollY, [0, 50], [1, 0.05])
   const backdropBlur = useTransform(scrollY, [0, 50], [0, 12])
@@ -43,7 +43,7 @@ export function Navbar() {
         }}
       >
         <motion.div 
-          className="relative mx-auto"
+          className="relative mx-auto container"
           style={{
             width: headerWidth,
             maxWidth: maxWidth,
@@ -52,7 +52,11 @@ export function Navbar() {
           <motion.div 
             className="border shadow-sm"
             style={{
-              backgroundColor: useTransform(scrollY, [0, 50], ['#F7FBF9', 'rgba(255, 255, 255, 0.05)']),
+              backgroundColor: useTransform(scrollY, [0, 50], 
+                variant === "white" 
+                  ? ['rgba(255, 255, 255, 1)', 'rgba(255, 255, 255, 0.95)'] 
+                  : ['#F7FBF9', 'rgba(255, 255, 255, 0.05)']
+              ),
               backdropFilter: useTransform(backdropBlur, (value) => `blur(${value}px)`),
               borderColor: useTransform(borderOpacity, (value) => `rgba(255, 255, 255, ${value})`),
               borderRadius: borderRadius,
@@ -100,12 +104,6 @@ export function Navbar() {
                 >
                   Expertise zorg
                 </Link>
-              </div>
-              <div className="h-6 w-px bg-primary/30"></div>
-              <div className="flex items-center gap-2 text-sm">
-                <button className="text-primary font-semibold hover:opacity-70 transition-opacity cursor-pointer">NL</button>
-                <span className="text-primary/60">|</span>
-                <button className="text-primary/70 hover:text-primary transition-colors cursor-pointer">EN</button>
               </div>
               <Link
                 href="/contact"
@@ -205,15 +203,6 @@ export function Navbar() {
                     </Link>
                   </div>
                 </nav>
-                
-                {/* Language Switcher */}
-                <div className="px-6 pb-8 border-t pt-6" style={{borderColor: 'var(--eqdent-light-grey)'}}>
-                  <div className="flex items-center gap-3 justify-center text-sm">
-                    <button className="font-medium px-3 py-2 rounded-md cursor-pointer" style={{color: 'var(--eqdent-green)', backgroundColor: 'var(--eqdent-green-light)'}}>NL</button>
-                    <span className="text-muted-foreground">|</span>
-                    <button className="text-muted-foreground hover:text-primary transition-all duration-200 px-3 py-2 rounded-md hover:bg-accent/30 cursor-pointer">EN</button>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </>

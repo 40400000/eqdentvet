@@ -1,11 +1,10 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin } from "lucide-react"
-import Link from "next/link"
 import { ContactForm } from "@/components/ContactForm"
 import { Navbar } from "@/components/Navbar"
+import { Footer } from "@/components/Footer"
 
 export default function ContactPage() {
 
@@ -96,23 +95,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <section style={{backgroundColor: 'var(--eqdent-green-dark)'}}>
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center">
-            <Link href="/" className="relative h-14 w-56 mx-auto mb-4 block">
-              <Image
-                src="/eqdent_donker.png"
-                alt="EQDent Logo"
-                fill
-                className="object-contain cursor-pointer"
-              />
-            </Link>
-            <p className="text-primary-foreground/80 mb-4">Professionele paardentandheelkunde aan huis</p>
-            <p className="text-sm text-primary-foreground/60">© 2025 EQDent. Alle rechten voorbehouden.</p>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </div>
   )
 }
