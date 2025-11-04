@@ -25,6 +25,7 @@ export function ContactForm({
   const [submitMessage, setSubmitMessage] = useState("")
   const [sameAsHome, setSameAsHome] = useState(false)
   const [address, setAddress] = useState("")
+  const [stalAddress, setStalAddress] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
 
@@ -154,6 +155,10 @@ export function ContactForm({
         </div>
       ) : (
         <form action={handleSubmit} className="space-y-6">
+          {/* Hidden input for stalAddress when same as home */}
+          {sameAsHome && (
+            <input type="hidden" name="stalAddress" value={address} />
+          )}
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label htmlFor="firstName" className="text-foreground font-medium">
@@ -306,13 +311,14 @@ export function ContactForm({
             </div>
             <Input
               id="stalAddress"
-              name="stalAddress"
+              name={sameAsHome ? "" : "stalAddress"}
               placeholder="Straat, huisnummer, postcode, plaats"
-              required
-              value={sameAsHome ? address : ""}
+              required={!sameAsHome}
+              value={sameAsHome ? address : stalAddress}
               disabled={sameAsHome}
               onChange={(e) => {
                 if (!sameAsHome) {
+                  setStalAddress(e.target.value)
                   handleFieldChange('stalAddress', e.target.value)
                 }
               }}
