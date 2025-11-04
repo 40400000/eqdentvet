@@ -6,7 +6,7 @@ export function Footer() {
     <section style={{backgroundColor: 'var(--eqdent-green-dark)'}}>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">
-          <Link href="/" className="relative h-14 w-56 mx-auto mb-4 block">
+          <Link href="/" className="relative h-16 w-64 mx-auto mb-4 block">
             <Image
               src="/eqdentlogo.png"
               alt="EQDent Logo"
@@ -18,20 +18,20 @@ export function Footer() {
           
           {/* Partner logos */}
           <div className="flex justify-center items-center gap-8 my-8">
-            <Link href="https://www.nvvgp.nl/" target="_blank" rel="noopener noreferrer" className="relative h-28 w-28">
-              <Image
-                src="/Logo-NVVGP.png"
-                alt="NVVGP Logo"
-                fill
-                className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </Link>
             <Link href="https://www.nced.se/" target="_blank" rel="noopener noreferrer" className="relative h-28 w-28">
               <Image
                 src="/logonced.avif"
                 alt="NCED Logo"
                 fill
                 className="object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </Link>
+            <Link href="https://www.nvvgp.nl/" target="_blank" rel="noopener noreferrer" className="relative h-18 w-18">
+              <Image
+                src="/Logo-NVVGP.png"
+                alt="NVVGP Logo"
+                fill
+                className="object-contain opacity-80 hover:opacity-100 transition-opacity"
               />
             </Link>
           </div>

@@ -10,7 +10,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <Navbar variant="white" />
 
       <div className="container mx-auto px-4 py-12 pt-32">
         <div className="max-w-6xl mx-auto">
