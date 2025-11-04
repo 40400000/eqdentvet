@@ -162,7 +162,7 @@ export function ContactForm({
               <div>
                 <h4 className="text-sm font-medium text-slate-700 mb-1">Werkgebied</h4>
                 <p className="text-sm text-slate-600">
-                  35 minuten vanaf Wezep. Woont u verder weg, dan bespreken we graag de mogelijkheden.
+                  30 minuten vanaf Wezep. Woont u verder weg, dan bespreken we graag de mogelijkheden.
                 </p>
               </div>
             </div>

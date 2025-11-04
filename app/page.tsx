@@ -32,7 +32,7 @@ export default function EqdentLanding() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 sm:pb-16 lg:pt-24" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
+      <section className="pt-32 pb-12 sm:pb-16 lg:pt-36" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-16">
             <motion.div
@@ -73,7 +73,7 @@ export default function EqdentLanding() {
                 </div>
 
                 <div className="flex items-center">
-                  <p className="text-3xl font-medium text-foreground sm:text-4xl">35 min</p>
+                  <p className="text-3xl font-medium text-foreground sm:text-4xl">30 min</p>
                   <p className="ml-3 text-sm text-muted-foreground">Werkgebied<br />Vanaf Wezep</p>
                 </div>
               </div>

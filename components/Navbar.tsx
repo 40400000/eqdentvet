@@ -2,20 +2,73 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
+  const { scrollY } = useScroll()
   
   const closeMenu = () => setIsMenuOpen(false)
   
+  useEffect(() => {
+    const unsubscribe = scrollY.on("change", (latest) => {
+      setHasScrolled(latest > 50)
+    })
+    return unsubscribe
+  }, [scrollY])
+
+  // Transform values for smooth morphing
+  const headerTop = useTransform(scrollY, [0, 50], [0, 12])
+  const headerPadding = useTransform(scrollY, [0, 50], [0, 16])
+  const headerWidth = useTransform(scrollY, [0, 50], ["100%", "100%"])
+  const maxWidth = useTransform(scrollY, [0, 50], ["100%", "64rem"])
+  const borderRadius = useTransform(scrollY, [0, 50], [0, 24])
+  const bgOpacity = useTransform(scrollY, [0, 50], [1, 0.05])
+  const backdropBlur = useTransform(scrollY, [0, 50], [0, 12])
+  const borderOpacity = useTransform(scrollY, [0, 50], [0, 0.05])
+  const shadowOpacity = useTransform(scrollY, [0, 50], [0, 0.05])
+  const verticalPadding = useTransform(scrollY, [0, 50], [12, 4])
+  
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
+      <motion.header 
+        className="fixed left-0 right-0 z-50"
+        style={{
+          top: headerTop,
+          paddingLeft: headerPadding,
+          paddingRight: headerPadding,
+        }}
+      >
+        <motion.div 
+          className="relative mx-auto"
+          style={{
+            width: headerWidth,
+            maxWidth: maxWidth,
+          }}
+        >
+          <motion.div 
+            className="border shadow-sm"
+            style={{
+              backgroundColor: useTransform(scrollY, [0, 50], ['#F7FBF9', 'rgba(255, 255, 255, 0.05)']),
+              backdropFilter: useTransform(backdropBlur, (value) => `blur(${value}px)`),
+              borderColor: useTransform(borderOpacity, (value) => `rgba(255, 255, 255, ${value})`),
+              borderRadius: borderRadius,
+              boxShadow: useTransform(shadowOpacity, (value) => 
+                `0 1px 2px rgba(0, 0, 0, ${value * 0.1}), 0 1px 3px rgba(0, 0, 0, ${value * 0.1})`
+              ),
+            }}
+          >
+            <motion.div 
+              className="px-8"
+              style={{
+                paddingTop: verticalPadding,
+                paddingBottom: verticalPadding,
+              }}
+            >
+              <div className="flex items-center justify-between">
             <Link href="/" className="relative h-12 w-48 lg:h-14 lg:w-56">
               {/* Always show on all devices */}
               <Image
@@ -70,9 +123,11 @@ export function Navbar() {
             >
               {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
-          </div>
-        </div>
-      </header>
+              </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.header>
       
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

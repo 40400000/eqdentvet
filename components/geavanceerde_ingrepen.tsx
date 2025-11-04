@@ -37,10 +37,6 @@ export function GeavanceerdeIngrepenSection() {
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                      <p className="text-muted-foreground text-sm">Minimaal invasieve chirurgische technieken</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                       <p className="text-muted-foreground text-sm">Behandeling van bijhoofdsholteontstekingen (sinusitis)</p>
                     </div>
                     <div className="flex items-start gap-3">
@@ -57,10 +53,7 @@ export function GeavanceerdeIngrepenSection() {
                       <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                       <p className="text-muted-foreground text-sm">EOTRH behandelingen</p>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                      <p className="text-muted-foreground text-sm">Kaakfractuur reparatie</p>
-                    </div>
+
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                       <p className="text-muted-foreground text-sm">Unieke tandheelkundige lasertherapie</p>
@@ -87,19 +80,20 @@ export function GeavanceerdeIngrepenSection() {
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <p className="text-muted-foreground text-sm">
-                        <strong>EQDent</strong> biedt complexe behandelingen direct beschikbaar zonder wachttijd of doorverwijzing.
-                      </p>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-muted-foreground text-sm">
                         <strong>EQDent</strong> beschikt over de nieuwste tandheelkundige technologie en moderne apparatuur.
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <p className="text-muted-foreground text-sm">
-                        <strong>EQDent</strong> voert geavanceerde behandelingen uit bij u thuis in een vertrouwde omgeving.
+                                              <strong>EQDent</strong> werkt hard aan de realisatie van een kliniek ruimte om alle expertise zorg te kunnen bieden.
+
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-muted-foreground text-sm">
+                        <strong>EQDent</strong> voert sommige geavanceerde behandelingen uit bij u thuis in een vertrouwde omgeving.
                       </p>
                     </li>
                   </ul>
