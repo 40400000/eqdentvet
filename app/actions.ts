@@ -4,31 +4,6 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-function calculateDistance(address: string): { isWithinArea: boolean; distance?: number } {
-  // Simple heuristic based on postal code or city name
-  // This is a basic implementation - in production, you'd use a proper geocoding API
-  const lowerAddress = address.toLowerCase()
-  
-  // Cities/areas within 30 minutes of Wezep
-  const nearbyAreas = [
-    'wezep', 'zwolle', 'apeldoorn', 'deventer', 'kampen', 'oldebroek', 
-    'hattem', 'elburg', 'nunspeet', 'harderwijk', 'ermelo', 'putten'
-  ]
-  
-  const isNearby = nearbyAreas.some(area => lowerAddress.includes(area))
-  
-  // Check postal codes (rough approximation)
-  const postalCodeMatch = address.match(/\d{4}/)?.[0]
-  if (postalCodeMatch) {
-    const code = parseInt(postalCodeMatch)
-    // Postal codes around Wezep area (this is approximate)
-    if ((code >= 8010 && code <= 8100) || (code >= 7300 && code <= 7400)) {
-      return { isWithinArea: true }
-    }
-  }
-  
-  return { isWithinArea: isNearby }
-}
 
 async function sendAdminNotification(formData: {
   firstName: string
@@ -38,26 +13,12 @@ async function sendAdminNotification(formData: {
   address: string
   stalAddress: string
   timestamp: string
-  isWithinArea: boolean
 }) {
-  const subject = formData.isWithinArea 
-    ? `Nieuwe afspraakaanvraag - ${formData.firstName} ${formData.lastName}`
-    : `⚠️ Afspraakaanvraag - Mogelijk buiten werkgebied - ${formData.firstName} ${formData.lastName}`
-
-  const warningSection = formData.isWithinArea ? '' : `
-    <div style="background-color: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-        <span style="color: #d97706; font-weight: 600;">⚠️ Werkgebied waarschuwing</span>
-      </div>
-      <p style="color: #92400e; font-size: 14px; margin: 0;">Dit adres ligt mogelijk buiten ons werkgebied van 30 minuten vanaf Wezep.</p>
-    </div>
-  `
+  const subject = `Nieuwe afspraakaanvraag - ${formData.firstName} ${formData.lastName}`
 
   const emailHtml = `
     <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #1f2937; margin-bottom: 16px;">Nieuwe afspraakaanvraag ontvangen</h2>
-      
-      ${warningSection}
       
       <div style="background-color: #eff6ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
         <div style="font-size: 14px; line-height: 1.5;">
@@ -69,13 +30,7 @@ async function sendAdminNotification(formData: {
           <p style="margin: 4px 0;"><strong>Datum/tijd:</strong> ${formData.timestamp}</p>
         </div>
       </div>
-      
-      <p style="font-size: 12px; color: #6b7280; margin: 16px 0 0 0;">
-        ${formData.isWithinArea 
-          ? 'Log in op het admin panel om de afspraak te bevestigen.'
-          : 'Controleer de afstand vanaf Wezep en bespreek mogelijkheden voordat je contact opneemt.'
-        }
-      </p>
+
     </div>
   `
 
@@ -200,9 +155,6 @@ export async function submitWaitlistForm(formData: FormData) {
       minute: '2-digit'
     })
 
-    // Check if location is within service area
-    const { isWithinArea } = calculateDistance(stalAddress)
-
     const submissionData = {
       firstName,
       lastName,
@@ -210,8 +162,7 @@ export async function submitWaitlistForm(formData: FormData) {
       phone,
       address,
       stalAddress,
-      timestamp,
-      isWithinArea
+      timestamp
     }
 
     // Send both emails in parallel
