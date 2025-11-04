@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'nl_NL',
     url: 'https://eqdent.nl',
-    siteName: 'EqDent - Paardentandheelkunde aan Huis',
-    title: 'EqDent - Paardentandheelkunde aan Huis | drs. Mark van Manen',
+    siteName: 'EqDent - Paardentandheelkunde',
+    title: 'EqDent - Paardentandheelkunde | drs. Mark van Manen',
     description: 'Professionele paardentandheelkunde bij het paard thuis door drs. Mark van Manen. Periodieke zorg en expertise behandelingen. 15+ jaar ervaring. Werkgebied 30 min vanaf Wezep.',
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EqDent - Paardentandheelkunde aan Huis',
+    title: 'EqDent - Paardentandheelkunde',
     description: 'Professionele paardentandheelkunde bij het paard thuis door drs. Mark van Manen. 15+ jaar ervaring.',
     images: ['/DTS_The_Farm_Richard_Smith_Photos_ID3394.jpg'],
     creator: '@eqdent',
