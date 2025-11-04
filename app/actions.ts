@@ -22,13 +22,10 @@ async function sendAdminNotification(formData: {
     <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background-color: #F7FBF9;">
       <!-- Header -->
       <div style="background-color: #3C6D51; padding: 24px; color: white; border-radius: 8px 8px 0 0;">
-        <div style="display: flex; align-items: center; gap: 16px;">
-          <img src="https://eqdent.nl/eqdentlogo.png" alt="EQDent Logo" style="height: 40px; width: auto;" />
-          <div>
-            <div style="font-size: 20px; font-weight: bold;">EQDent</div>
-            <div style="text-align: left; font-size: 14px; opacity: 0.9;">
-              Professionele paardentandheelkunde
-            </div>
+        <div style="text-align: center;">
+          <div style="font-size: 20px; font-weight: bold;">EQDent</div>
+          <div style="font-size: 14px; opacity: 0.9;">
+            Professionele paardentandheelkunde
           </div>
         </div>
       </div>
@@ -82,13 +79,10 @@ async function sendClientConfirmation(formData: {
     <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background-color: #F7FBF9;">
       <!-- Header -->
       <div style="background-color: #3C6D51; padding: 24px; color: white; border-radius: 8px 8px 0 0;">
-        <div style="display: flex; align-items: center; gap: 16px;">
-          <img src="https://eqdent.nl/eqdentlogo.png" alt="EQDent Logo" style="height: 40px; width: auto;" />
-          <div>
-            <div style="font-size: 20px; font-weight: bold;">EQDent</div>
-            <div style="text-align: left; font-size: 14px; opacity: 0.9;">
-              Professionele paardentandheelkunde bij het paard thuis
-            </div>
+        <div style="text-align: center;">
+          <div style="font-size: 20px; font-weight: bold;">EQDent</div>
+          <div style="font-size: 14px; opacity: 0.9;">
+            Professionele paardentandheelkunde bij het paard thuis
           </div>
         </div>
       </div>

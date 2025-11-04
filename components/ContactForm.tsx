@@ -369,7 +369,7 @@ export function ContactForm({
       )}
 
       <p className="text-sm text-muted-foreground text-center mt-6">
-        We respecteren uw privacy en nemen binnen 24 uur contact met u op voor het plannen van een afspraak.
+        We respecteren uw privacy en nemen binnen twee dagen contact met u op voor het plannen van een afspraak.
       </p>
     </div>
   )
