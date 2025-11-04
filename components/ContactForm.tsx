@@ -5,8 +5,10 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react"
 import { submitWaitlistForm } from "@/app/actions"
+import { formSchema } from "@/lib/validations"
+import { z } from "zod"
 
 interface ContactFormProps {
   title?: string
@@ -23,12 +25,91 @@ export function ContactForm({
   const [submitMessage, setSubmitMessage] = useState("")
   const [sameAsHome, setSameAsHome] = useState(false)
   const [address, setAddress] = useState("")
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [touched, setTouched] = useState<Record<string, boolean>>({})
+
+  const validateField = (name: string, value: string) => {
+    try {
+      if (name === 'stalAddress' && sameAsHome) {
+        // Use address value for stalAddress when same as home
+        formSchema.shape[name as keyof typeof formSchema.shape].parse(address)
+      } else {
+        formSchema.shape[name as keyof typeof formSchema.shape].parse(value)
+      }
+      setErrors(prev => ({ ...prev, [name]: "" }))
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        setErrors(prev => ({ ...prev, [name]: error.issues[0].message }))
+      }
+    }
+  }
+
+  const handleFieldChange = (name: string, value: string) => {
+    validateField(name, value)
+    if (name === 'address') {
+      setAddress(value)
+      // Also validate stalAddress if same as home
+      if (sameAsHome) {
+        validateField('stalAddress', value)
+      }
+    }
+  }
+
+  const handleFieldBlur = (name: string, value: string) => {
+    setTouched(prev => ({ ...prev, [name]: true }))
+    validateField(name, value)
+  }
+
+  const validateForm = (formData: FormData) => {
+    const data = {
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      address: formData.get("address") as string,
+      stalAddress: formData.get("stalAddress") as string,
+    }
+
+    try {
+      formSchema.parse(data)
+      setErrors({})
+      return true
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const fieldErrors: Record<string, string> = {}
+        error.issues.forEach((err) => {
+          if (err.path[0]) {
+            fieldErrors[err.path[0] as string] = err.message
+          }
+        })
+        setErrors(fieldErrors)
+        // Mark all fields as touched to show errors
+        setTouched({
+          firstName: true,
+          lastName: true,
+          email: true,
+          phone: true,
+          address: true,
+          stalAddress: true,
+        })
+      }
+      return false
+    }
+  }
 
   const handleSubmit = async (formData: FormData) => {
+    if (!validateForm(formData)) {
+      return
+    }
+
     setIsSubmitting(true)
     try {
       const result = await submitWaitlistForm(formData)
       setSubmitMessage(result.message)
+      if (!result.success) {
+        // If server validation fails, don't clear the form
+        return
+      }
     } catch (error) {
       setSubmitMessage("Er is een fout opgetereden. Probeer het opnieuw.")
     } finally {
@@ -66,8 +147,20 @@ export function ContactForm({
                 name="firstName"
                 placeholder="Uw voornaam"
                 required
-                className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white"
+                onChange={(e) => handleFieldChange('firstName', e.target.value)}
+                onBlur={(e) => handleFieldBlur('firstName', e.target.value)}
+                className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
+                  touched.firstName && errors.firstName 
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
+                    : 'border-border'
+                }`}
               />
+              {touched.firstName && errors.firstName && (
+                <div className="flex items-center gap-1 text-red-600 text-sm">
+                  <AlertCircle className="h-4 w-4" />
+                  {errors.firstName}
+                </div>
+              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName" className="text-foreground font-medium">
@@ -78,8 +171,20 @@ export function ContactForm({
                 name="lastName"
                 placeholder="Uw achternaam"
                 required
-                className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white"
+                onChange={(e) => handleFieldChange('lastName', e.target.value)}
+                onBlur={(e) => handleFieldBlur('lastName', e.target.value)}
+                className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
+                  touched.lastName && errors.lastName 
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
+                    : 'border-border'
+                }`}
               />
+              {touched.lastName && errors.lastName && (
+                <div className="flex items-center gap-1 text-red-600 text-sm">
+                  <AlertCircle className="h-4 w-4" />
+                  {errors.lastName}
+                </div>
+              )}
             </div>
           </div>
 
@@ -93,9 +198,23 @@ export function ContactForm({
               placeholder="Straat, huisnummer, postcode, plaats"
               required
               value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white"
+              onChange={(e) => {
+                setAddress(e.target.value)
+                handleFieldChange('address', e.target.value)
+              }}
+              onBlur={(e) => handleFieldBlur('address', e.target.value)}
+              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
+                touched.address && errors.address 
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
+                  : 'border-border'
+              }`}
             />
+            {touched.address && errors.address && (
+              <div className="flex items-center gap-1 text-red-600 text-sm">
+                <AlertCircle className="h-4 w-4" />
+                {errors.address}
+              </div>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -108,8 +227,20 @@ export function ContactForm({
               type="email"
               placeholder="uw@email.nl"
               required
-              className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white"
+              onChange={(e) => handleFieldChange('email', e.target.value)}
+              onBlur={(e) => handleFieldBlur('email', e.target.value)}
+              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
+                touched.email && errors.email 
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
+                  : 'border-border'
+              }`}
             />
+            {touched.email && errors.email && (
+              <div className="flex items-center gap-1 text-red-600 text-sm">
+                <AlertCircle className="h-4 w-4" />
+                {errors.email}
+              </div>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -122,8 +253,20 @@ export function ContactForm({
               type="tel"
               placeholder="06-82857060"
               required
-              className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white"
+              onChange={(e) => handleFieldChange('phone', e.target.value)}
+              onBlur={(e) => handleFieldBlur('phone', e.target.value)}
+              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
+                touched.phone && errors.phone 
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
+                  : 'border-border'
+              }`}
             />
+            {touched.phone && errors.phone && (
+              <div className="flex items-center gap-1 text-red-600 text-sm">
+                <AlertCircle className="h-4 w-4" />
+                {errors.phone}
+              </div>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -151,8 +294,28 @@ export function ContactForm({
               required
               value={sameAsHome ? address : ""}
               disabled={sameAsHome}
-              className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white disabled:bg-muted disabled:text-muted-foreground"
+              onChange={(e) => {
+                if (!sameAsHome) {
+                  handleFieldChange('stalAddress', e.target.value)
+                }
+              }}
+              onBlur={(e) => {
+                if (!sameAsHome) {
+                  handleFieldBlur('stalAddress', e.target.value)
+                }
+              }}
+              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white disabled:bg-muted disabled:text-muted-foreground ${
+                touched.stalAddress && errors.stalAddress && !sameAsHome
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
+                  : 'border-border'
+              }`}
             />
+            {touched.stalAddress && errors.stalAddress && !sameAsHome && (
+              <div className="flex items-center gap-1 text-red-600 text-sm">
+                <AlertCircle className="h-4 w-4" />
+                {errors.stalAddress}
+              </div>
+            )}
           </div>
 
           {/* Werkgebied notification */}

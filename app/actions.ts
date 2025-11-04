@@ -1,6 +1,8 @@
 "use server"
 
 import { Resend } from 'resend'
+import { z } from 'zod'
+import { formSchema } from '@/lib/validations'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -136,16 +138,16 @@ async function sendClientConfirmation(formData: {
 
 export async function submitWaitlistForm(formData: FormData) {
   try {
-    const firstName = formData.get("firstName") as string
-    const lastName = formData.get("lastName") as string
-    const email = formData.get("email") as string
-    const phone = formData.get("phone") as string
-    const address = formData.get("address") as string
-    const stalAddress = formData.get("stalAddress") as string
-
-    if (!firstName || !lastName || !email || !phone || !address || !stalAddress) {
-      throw new Error("Alle velden zijn verplicht")
+    const rawData = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      address: formData.get("address"),
+      stalAddress: formData.get("stalAddress"),
     }
+
+    const validatedData = formSchema.parse(rawData)
 
     const timestamp = new Date().toLocaleString('nl-NL', {
       day: 'numeric',
@@ -156,19 +158,18 @@ export async function submitWaitlistForm(formData: FormData) {
     })
 
     const submissionData = {
-      firstName,
-      lastName,
-      email,
-      phone,
-      address,
-      stalAddress,
+      ...validatedData,
       timestamp
     }
 
     // Send both emails in parallel
     const [adminResult, clientResult] = await Promise.allSettled([
       sendAdminNotification(submissionData),
-      sendClientConfirmation({ firstName, lastName, email })
+      sendClientConfirmation({ 
+        firstName: validatedData.firstName, 
+        lastName: validatedData.lastName, 
+        email: validatedData.email 
+      })
     ])
 
     // Log results for debugging
@@ -185,11 +186,20 @@ export async function submitWaitlistForm(formData: FormData) {
 
     return {
       success: true,
-      message: `Bedankt ${firstName}! Uw afspraakaanvraag is ontvangen. Wij nemen binnen twee werkdagen contact met u op om een afspraak in te plannen.`,
+      message: `Bedankt ${validatedData.firstName}! Uw afspraakaanvraag is ontvangen. Wij nemen binnen twee werkdagen contact met u op om een afspraak in te plannen.`,
     }
 
   } catch (error) {
     console.error("Form submission error:", error)
+    
+    if (error instanceof z.ZodError) {
+      const fieldErrors = error.issues.map((err) => err.message).join(", ")
+      return {
+        success: false,
+        message: fieldErrors,
+      }
+    }
+    
     return {
       success: false,
       message: "Er is een fout opgetreden. Probeer het opnieuw of neem direct contact met ons op.",
