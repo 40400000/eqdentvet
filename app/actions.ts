@@ -137,6 +137,8 @@ async function sendClientConfirmation(formData: {
 }
 
 export async function submitWaitlistForm(formData: FormData) {
+  console.log("🔄 Form submission started")
+  
   try {
     const rawData = {
       firstName: formData.get("firstName"),
@@ -147,7 +149,10 @@ export async function submitWaitlistForm(formData: FormData) {
       stalAddress: formData.get("stalAddress"),
     }
 
+    console.log("📋 Raw form data:", rawData)
+
     const validatedData = formSchema.parse(rawData)
+    console.log("✅ Data validation successful:", validatedData)
 
     const timestamp = new Date().toLocaleString('nl-NL', {
       day: 'numeric',
@@ -162,6 +167,8 @@ export async function submitWaitlistForm(formData: FormData) {
       timestamp
     }
 
+    console.log("📧 Sending emails with data:", submissionData)
+
     // Send both emails in parallel
     const [adminResult, clientResult] = await Promise.allSettled([
       sendAdminNotification(submissionData),
@@ -172,27 +179,30 @@ export async function submitWaitlistForm(formData: FormData) {
       })
     ])
 
-    // Log results for debugging
-    console.log("Email submission results:", {
-      admin: adminResult,
-      client: clientResult,
-      submissionData
+    console.log("📬 Email results:", {
+      admin: adminResult.status,
+      adminDetails: adminResult.status === 'fulfilled' ? 'Success' : adminResult.reason,
+      client: clientResult.status,
+      clientDetails: clientResult.status === 'fulfilled' ? 'Success' : clientResult.reason
     })
 
     // Check if at least one email was sent successfully
     if (adminResult.status === 'rejected' && clientResult.status === 'rejected') {
+      console.error("❌ Both emails failed to send")
       throw new Error("Er is een probleem opgetreden bij het versturen van de e-mails")
     }
 
+    console.log("✅ Form submission successful!")
     return {
       success: true,
       message: `Bedankt ${validatedData.firstName}! Uw afspraakaanvraag is ontvangen. Wij nemen binnen twee werkdagen contact met u op om een afspraak in te plannen.`,
     }
 
   } catch (error) {
-    console.error("Form submission error:", error)
+    console.error("❌ Form submission error:", error)
     
     if (error instanceof z.ZodError) {
+      console.error("🔍 Validation errors:", error.issues)
       const fieldErrors = error.issues.map((err) => err.message).join(", ")
       return {
         success: false,
@@ -200,6 +210,7 @@ export async function submitWaitlistForm(formData: FormData) {
       }
     }
     
+    console.error("🚨 Unexpected error:", error)
     return {
       success: false,
       message: "Er is een fout opgetreden. Probeer het opnieuw of neem direct contact met ons op.",

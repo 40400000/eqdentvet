@@ -98,21 +98,38 @@ export function ContactForm({
   }
 
   const handleSubmit = async (formData: FormData) => {
+    console.log("🎯 Client: Form submission started")
+    
+    // Log form data for debugging
+    const formEntries = Array.from(formData.entries())
+    console.log("📝 Client: Form data entries:", formEntries)
+    
     if (!validateForm(formData)) {
+      console.log("❌ Client: Form validation failed")
       return
     }
 
+    console.log("✅ Client: Form validation passed")
     setIsSubmitting(true)
+    
     try {
+      console.log("🚀 Client: Calling server action...")
       const result = await submitWaitlistForm(formData)
+      console.log("📨 Client: Server response:", result)
+      
       setSubmitMessage(result.message)
+      
       if (!result.success) {
-        // If server validation fails, don't clear the form
+        console.log("⚠️ Client: Server returned failure")
         return
       }
+      
+      console.log("🎉 Client: Form submission successful!")
     } catch (error) {
+      console.error("❌ Client: Error during submission:", error)
       setSubmitMessage("Er is een fout opgetereden. Probeer het opnieuw.")
     } finally {
+      console.log("🏁 Client: Setting isSubmitting to false")
       setIsSubmitting(false)
     }
   }
