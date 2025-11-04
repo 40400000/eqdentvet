@@ -19,20 +19,48 @@ async function sendAdminNotification(formData: {
   const subject = `Nieuwe afspraakaanvraag - ${formData.firstName} ${formData.lastName}`
 
   const emailHtml = `
-    <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #1f2937; margin-bottom: 16px;">Nieuwe afspraakaanvraag ontvangen</h2>
-      
-      <div style="background-color: #eff6ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
-        <div style="font-size: 14px; line-height: 1.5;">
-          <p style="margin: 4px 0;"><strong>Naam:</strong> ${formData.firstName} ${formData.lastName}</p>
-          <p style="margin: 4px 0;"><strong>E-mail:</strong> ${formData.email}</p>
-          <p style="margin: 4px 0;"><strong>Telefoon:</strong> ${formData.phone}</p>
-          <p style="margin: 4px 0;"><strong>Adres:</strong> ${formData.address}</p>
-          <p style="margin: 4px 0;"><strong>Staladres:</strong> ${formData.stalAddress}</p>
-          <p style="margin: 4px 0;"><strong>Datum/tijd:</strong> ${formData.timestamp}</p>
+    <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background-color: #F7FBF9;">
+      <!-- Header -->
+      <div style="background-color: #3C6D51; padding: 24px; color: white; border-radius: 8px 8px 0 0;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <img src="https://eqdent.nl/eqdentlogo.png" alt="EQDent Logo" style="height: 40px; width: auto;" />
+          <div>
+            <div style="font-size: 20px; font-weight: bold;">EQDent</div>
+            <div style="text-align: left; font-size: 14px; opacity: 0.9;">
+              Professionele paardentandheelkunde
+            </div>
+          </div>
         </div>
       </div>
-
+      
+      <!-- Body -->
+      <div style="padding: 32px; background-color: white; border: 1px solid #9FAEAA; border-top: none; border-radius: 0 0 8px 8px;">
+        <h2 style="color: #3C6D51; margin-bottom: 24px; font-size: 24px; font-weight: 300;">Nieuwe afspraakaanvraag ontvangen</h2>
+        
+        <div style="background-color: #E8F3EC; border: 1px solid #4C8A65; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+          <div style="font-size: 15px; line-height: 1.6; color: #3C6D51;">
+            <p style="margin: 8px 0;"><strong>Naam:</strong> ${formData.firstName} ${formData.lastName}</p>
+            <p style="margin: 8px 0;"><strong>E-mail:</strong> ${formData.email}</p>
+            <p style="margin: 8px 0;"><strong>Telefoon:</strong> ${formData.phone}</p>
+            <p style="margin: 8px 0;"><strong>Adres:</strong> ${formData.address}</p>
+            <p style="margin: 8px 0;"><strong>Staladres:</strong> ${formData.stalAddress}</p>
+            <p style="margin: 8px 0;"><strong>Datum/tijd:</strong> ${formData.timestamp}</p>
+          </div>
+        </div>
+        
+        <div style="background-color: #F7FBF9; border: 1px solid #4C8A65; border-radius: 8px; padding: 20px;">
+          <p style="color: #4C8A65; margin: 0; font-weight: 600;">
+            ✓ Log in op het admin panel om de afspraak te bevestigen.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <div style="background-color: #D8CBB2; padding: 16px; text-align: center; border-radius: 0 0 8px 8px;">
+        <p style="font-size: 12px; color: #3C6D51; margin: 0;">
+          EQDent - Professionele paardentandheelkunde | www.eqdent.nl
+        </p>
+      </div>
     </div>
   `
 
@@ -51,77 +79,80 @@ async function sendClientConfirmation(formData: {
   email: string
 }) {
   const emailHtml = `
-    <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto;">
+    <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background-color: #F7FBF9;">
       <!-- Header -->
-      <div style="background-color: #059669; padding: 24px; color: white; border-radius: 8px 8px 0 0;">
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-          <div style="font-size: 20px; font-weight: bold;">EQDent</div>
-          <div style="text-align: right; font-size: 14px; opacity: 0.9;">
-            Professionele paardentandheelkunde bij het paard thuis
+      <div style="background-color: #3C6D51; padding: 24px; color: white; border-radius: 8px 8px 0 0;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <img src="https://eqdent.nl/eqdentlogo.png" alt="EQDent Logo" style="height: 40px; width: auto;" />
+          <div>
+            <div style="font-size: 20px; font-weight: bold;">EQDent</div>
+            <div style="text-align: left; font-size: 14px; opacity: 0.9;">
+              Professionele paardentandheelkunde bij het paard thuis
+            </div>
           </div>
         </div>
       </div>
       
       <!-- Body -->
-      <div style="padding: 32px; background-color: white; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
+      <div style="padding: 32px; background-color: white; border: 1px solid #9FAEAA; border-top: none; border-radius: 0 0 8px 8px;">
         <div style="margin-bottom: 24px;">
-          <h1 style="color: #059669; font-size: 24px; font-weight: 300; margin: 0 0 8px 0;">Bedankt voor uw afspraakaanvraag</h1>
-          <p style="color: #6b7280; margin: 0;">Wij nemen binnen twee werkdagen contact met u op</p>
+          <h1 style="color: #3C6D51; font-size: 24px; font-weight: 300; margin: 0 0 8px 0;">Bedankt voor uw afspraakaanvraag</h1>
+          <p style="color: #9FAEAA; margin: 0;">Wij nemen binnen twee werkdagen contact met u op</p>
         </div>
         
         <div style="margin-bottom: 24px;">
-          <p style="color: #374151; margin: 0 0 16px 0;">Beste ${formData.firstName},</p>
+          <p style="color: #3C6D51; margin: 0 0 16px 0;">Beste ${formData.firstName},</p>
           
-          <p style="color: #374151; line-height: 1.6; margin: 0 0 24px 0;">
+          <p style="color: #3C6D51; line-height: 1.6; margin: 0 0 24px 0;">
             Hartelijk dank voor uw vertrouwen in EQDent. Wij hebben uw afspraakaanvraag 
             ontvangen en zullen binnen twee werkdagen telefonisch contact met u opnemen om een geschikte 
             tijd in te plannen voor de tandheelkundige zorg van uw paard op locatie.
           </p>
           
-          <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 24px; margin-bottom: 24px;">
-            <h3 style="color: #059669; font-weight: 600; margin: 0 0 12px 0;">Wat kunt u verwachten:</h3>
-            <ul style="margin: 0; padding-left: 0; list-style: none; color: #374151;">
+          <div style="background-color: #E8F3EC; border: 1px solid #4C8A65; border-radius: 8px; padding: 24px; margin-bottom: 24px;">
+            <h3 style="color: #3C6D51; font-weight: 600; margin: 0 0 12px 0;">Wat kunt u verwachten:</h3>
+            <ul style="margin: 0; padding-left: 0; list-style: none; color: #3C6D51;">
               <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
-                <span style="color: #10b981; margin-top: 2px;">✓</span>
+                <span style="color: #4C8A65; margin-top: 2px;">✓</span>
                 <span>Telefonisch contact binnen twee werkdagen</span>
               </li>
               <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
-                <span style="color: #10b981; margin-top: 2px;">✓</span>
+                <span style="color: #4C8A65; margin-top: 2px;">✓</span>
                 <span>Tandheelkundige zorg op uw locatie - binnen 30 minuten vanaf Wezep</span>
               </li>
               <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
-                <span style="color: #10b981; margin-top: 2px;">✓</span>
+                <span style="color: #4C8A65; margin-top: 2px;">✓</span>
                 <span>Dezelfde aandacht en precisie als in een klinische setting</span>
               </li>
               <li style="display: flex; align-items: flex-start; gap: 12px;">
-                <span style="color: #10b981; margin-top: 2px;">✓</span>
+                <span style="color: #4C8A65; margin-top: 2px;">✓</span>
                 <span>15+ jaar ervaring in paardentandheelkunde</span>
               </li>
             </ul>
           </div>
           
-          <div style="background-color: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 24px; margin-bottom: 24px;">
-            <h3 style="color: #059669; font-weight: 600; margin: 0 0 8px 0;">Heeft u vragen?</h3>
-            <p style="color: #059669; margin: 0;">
+          <div style="background-color: #F7FBF9; border: 1px solid #4C8A65; border-radius: 8px; padding: 24px; margin-bottom: 24px;">
+            <h3 style="color: #4C8A65; font-weight: 600; margin: 0 0 8px 0;">Heeft u vragen?</h3>
+            <p style="color: #4C8A65; margin: 0;">
               Voor vragen over uw afspraak kunt u contact opnemen via 
               <strong>contact@eqdent.nl</strong>
             </p>
           </div>
         </div>
         
-        <div style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
-          <p style="color: #374151; margin: 0 0 12px 0;">Met vriendelijke groet,</p>
+        <div style="border-top: 1px solid #9FAEAA; padding-top: 24px;">
+          <p style="color: #3C6D51; margin: 0 0 12px 0;">Met vriendelijke groet,</p>
           <div style="margin-top: 12px;">
-            <p style="font-weight: 600; color: #111827; margin: 0;">drs. Mark van Manen</p>
-            <p style="color: #6b7280; margin: 0;">oprichter en tandheelkundig paardenarts - EQDent</p>
-            <p style="color: #10b981; font-size: 14px; margin: 0;">www.eqdent.nl</p>
+            <p style="font-weight: 600; color: #3C6D51; margin: 0;">drs. Mark van Manen</p>
+            <p style="color: #9FAEAA; margin: 0;">oprichter en tandheelkundig paardenarts - EQDent</p>
+            <p style="color: #4C8A65; font-size: 14px; margin: 0;">www.eqdent.nl</p>
           </div>
         </div>
       </div>
       
       <!-- Footer -->
-      <div style="background-color: #f3f4f6; padding: 16px; text-align: center; border-radius: 0 0 8px 8px;">
-        <p style="font-size: 12px; color: #6b7280; margin: 0;">
+      <div style="background-color: #D8CBB2; padding: 16px; text-align: center; border-radius: 0 0 8px 8px;">
+        <p style="font-size: 12px; color: #3C6D51; margin: 0;">
           Dit is een automatisch gegenereerd bericht. Voor vragen kunt u contact opnemen via onze website.
         </p>
       </div>
