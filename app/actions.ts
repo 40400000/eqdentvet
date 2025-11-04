@@ -20,6 +20,6 @@ export async function submitWaitlistForm(formData: FormData) {
 
   return {
     success: true,
-    message: `Bedankt ${firstName}! Je bent succesvol ingeschreven voor de wachtlijst. We houden je op de hoogte van alle ontwikkelingen.`,
+    message: `Bedankt ${firstName}! Uw afspraakaanvraag is ontvangen. Wij nemen binnen twee werkdagen contact met u op om een afspraak in te plannen.`,
   }
 }

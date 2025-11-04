@@ -42,7 +42,7 @@ export default function DevPage() {
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm">
                 <div className="space-y-3">
                   <div className="border-b border-slate-300 pb-3">
-                    <p><strong>Aan:</strong> mark@eqdent.nl</p>
+                    <p><strong>Aan:</strong> contact@eqdent.nl</p>
                     <p><strong>Onderwerp:</strong> Nieuwe afspraakaanvraag - Anna Mertens</p>
                   </div>
                   
@@ -75,23 +75,23 @@ export default function DevPage() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <AlertTriangle className="h-6 w-6 text-amber-500" />
-                <h2 className="text-xl font-semibold text-slate-900">Afspraak - Concurrentiebeding</h2>
+                <h2 className="text-xl font-semibold text-slate-900">Afspraak - Buiten Werkgebied</h2>
               </div>
               
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm">
                 <div className="space-y-3">
                   <div className="border-b border-slate-300 pb-3">
-                    <p><strong>Aan:</strong> mark@eqdent.nl</p>
-                    <p><strong>Onderwerp:</strong> ⚠️ Afspraakaanvraag - Mogelijk concurrentiebeding</p>
+                    <p><strong>Aan:</strong> contact@eqdent.nl</p>
+                    <p><strong>Onderwerp:</strong> ⚠️ Afspraakaanvraag - Mogelijk buiten werkgebied</p>
                   </div>
                   
                   <div className="space-y-3">
                     <div className="bg-amber-50 border border-amber-300 rounded p-3">
                       <div className="flex items-center gap-2 mb-2">
                         <AlertTriangle className="h-4 w-4 text-amber-600" />
-                        <p className="font-semibold text-amber-900">Concurrentiebeding waarschuwing</p>
+                        <p className="font-semibold text-amber-900">Werkgebied waarschuwing</p>
                       </div>
-                      <p className="text-amber-800 text-sm">Dit adres valt mogelijk onder het concurrentiebeding.</p>
+                      <p className="text-amber-800 text-sm">Dit adres ligt mogelijk buiten ons werkgebied van 30 minuten vanaf Wezep.</p>
                     </div>
                     
                     <div className="bg-blue-50 border border-blue-200 rounded p-3">
@@ -104,7 +104,7 @@ export default function DevPage() {
                     </div>
                     
                     <p className="text-xs text-slate-500">
-                      Controleer het concurrentiebeding voordat je contact opneemt.
+                      Controleer de afstand vanaf Wezep en bespreek mogelijkheden voordat je contact opneemt.
                     </p>
                   </div>
                 </div>
@@ -127,18 +127,18 @@ export default function DevPage() {
             {/* Email Preview */}
             <div className="bg-white border border-slate-300 rounded-lg overflow-hidden">
               {/* Email Header */}
-              <div className="bg-slate-950 p-6 text-white">
+              <div className="p-6 text-white" style={{backgroundColor: 'var(--eqdent-green-dark)'}}>
                 <div className="flex items-center gap-4">
                   <div className="relative h-12 w-32">
                     <Image
-                      src="https://vhtnlfbnq3ecybmn.public.blob.vercel-storage.com/mark/eqdent_logo.png"
-                      alt="EqDent Logo"
+                      src="/eqdentlogo.png"
+                      alt="EQDent Logo"
                       fill
                       className="object-contain object-left"
                     />
                   </div>
                   <div className="text-right">
-                    <p className="text-blue-300 text-sm">Professionele paardentandheelkunde</p>
+                    <p className="text-white/90 text-sm">Professionele paardentandheelkunde bij het paard thuis</p>
                   </div>
                 </div>
               </div>
@@ -146,46 +146,46 @@ export default function DevPage() {
               {/* Email Body */}
               <div className="p-8 space-y-6">
                 <div>
-                  <h1 className="text-2xl font-light text-blue-900 mb-2">Bedankt voor uw afspraakaanvraag</h1>
-                  <p className="text-slate-600">Wij nemen binnen 24 uur contact met u op</p>
+                  <h1 className="text-2xl font-light mb-2" style={{color: 'var(--eqdent-green-dark)'}}>Bedankt voor uw afspraakaanvraag</h1>
+                  <p className="text-slate-600">Wij nemen binnen twee werkdagen contact met u op</p>
                 </div>
                 
                 <div className="space-y-4">
                   <p className="text-slate-700">Beste Anna,</p>
                   
                   <p className="text-slate-700 leading-relaxed">
-                    Hartelijk dank voor uw vertrouwen in EqDent. Wij hebben uw afspraakaanvraag 
-                    ontvangen en zullen binnen 24 uur telefonisch contact met u opnemen om een geschikte 
-                    tijd in te plannen voor de tandheelkundige controle van uw paard.
+                    Hartelijk dank voor uw vertrouwen in EQDent. Wij hebben uw afspraakaanvraag 
+                    ontvangen en zullen binnen twee werkdagen telefonisch contact met u opnemen om een geschikte 
+                    tijd in te plannen voor de tandheelkundige zorg van uw paard op locatie.
                   </p>
                   
-                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                    <h3 className="font-semibold text-slate-900 mb-3">Wat kunt u verwachten:</h3>
+                  <div className="rounded-lg p-6" style={{backgroundColor: 'var(--eqdent-white-green)', borderColor: 'var(--eqdent-light-grey)'}}>
+                    <h3 className="font-semibold mb-3" style={{color: 'var(--eqdent-green-dark)'}}>Wat kunt u verwachten:</h3>
                     <ul className="space-y-2 text-slate-700">
                       <li className="flex items-start gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Telefonisch contact binnen 24 uur</span>
+                        <CheckCircle className="h-4 w-4 flex-shrink-0 mt-0.5" style={{color: 'var(--eqdent-green)'}} />
+                        <span>Telefonisch contact binnen twee werkdagen</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Ambulante behandeling op uw locatie</span>
+                        <CheckCircle className="h-4 w-4 flex-shrink-0 mt-0.5" style={{color: 'var(--eqdent-green)'}} />
+                        <span>Tandheelkundige zorg op uw locatie - binnen 30 minuten vanaf Wezep</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Moderne apparatuur en transparante behandeling</span>
+                        <CheckCircle className="h-4 w-4 flex-shrink-0 mt-0.5" style={{color: 'var(--eqdent-green)'}} />
+                        <span>Dezelfde aandacht en precisie als in een klinische setting</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Professionele nazorg en advies</span>
+                        <CheckCircle className="h-4 w-4 flex-shrink-0 mt-0.5" style={{color: 'var(--eqdent-green)'}} />
+                        <span>15+ jaar ervaring in paardentandheelkunde</span>
                       </li>
                     </ul>
                   </div>
                   
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <h3 className="font-semibold text-blue-900 mb-2">Spoedgeval?</h3>
-                    <p className="text-blue-800">
-                      Voor urgente tandheelkundige problemen kunt u ons direct bereiken op 
-                      <strong> 06-12345678</strong>
+                  <div className="rounded-lg p-6" style={{backgroundColor: 'var(--eqdent-green-light)', borderColor: 'var(--eqdent-green)'}}>
+                    <h3 className="font-semibold mb-2" style={{color: 'var(--eqdent-green-dark)'}}>Heeft u vragen?</h3>
+                    <p style={{color: 'var(--eqdent-green-dark)'}}>
+                      Voor vragen over uw afspraak kunt u contact opnemen via 
+                      <strong> contact@eqdent.nl</strong>
                     </p>
                   </div>
                 </div>
@@ -193,9 +193,9 @@ export default function DevPage() {
                 <div className="border-t border-slate-200 pt-6">
                   <p className="text-slate-700">Met vriendelijke groet,</p>
                   <div className="mt-3">
-                    <p className="font-semibold text-slate-900">Dr. Mark van Manen</p>
-                    <p className="text-slate-600">EqDent</p>
-                    <p className="text-blue-700 text-sm">www.eqdent.nl</p>
+                    <p className="font-semibold text-slate-900">drs. Mark van Manen</p>
+                    <p className="text-slate-600">oprichter en tandheelkundig paardenarts - EQDent</p>
+                    <p className="text-sm" style={{color: 'var(--eqdent-green)'}}>www.eqdent.nl</p>
                   </div>
                 </div>
               </div>

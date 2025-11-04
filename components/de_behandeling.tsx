@@ -67,12 +67,12 @@ export function BehandelingSection() {
             <div className="md:col-span-2">
               <div className="sticky top-24">
                 <div className="relative h-[300px] rounded-xl overflow-hidden mb-6">
-{/*                  <Image
+                  <Image
                     src="https://vhtnlfbnq3ecybmn.public.blob.vercel-storage.com/susanne_website/horse-teeth-canva-4-4-22-2-577ykb1Jmv8jtKYWrExHr6uscDLeqv.jpg"
                     alt="Gebitsbehandeling bij een paard"
                     fill
                     className="object-cover"
-                  />*/}
+                  />
                 </div>
                 <div className="p-6 rounded-xl" style={{backgroundColor: 'var(--eqdent-green-light)'}}>
                   <h3 className="text-lg font-medium text-primary mb-4">EQDent</h3>
