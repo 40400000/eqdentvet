@@ -3,27 +3,8 @@
 import Image from "next/image"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "EqDent - Professionele Paardentandheelkunde aan Huis | 15+ Jaar Ervaring",
-  description: "Professionele paardentandheelkunde bij het paard thuis door drs. Mark van Manen. Periodieke zorg, expertise behandelingen, extracties, EOTRH, sinusitis. Werkgebied 30 min vanaf Wezep.",
-  keywords: "paardentandheelkunde, tandarts paard, aan huis, mobile equine dentistry, paardentandarts, paardengebit, sedatie, extracties, periodieke zorg, expertise zorg, geavanceerde ingrepen, EOTRH, sinusitis, diastema, Mark van Manen, Wezep",
-  openGraph: {
-    title: "EqDent - Professionele Paardentandheelkunde aan Huis",
-    description: "Professionele paardentandheelkunde bij het paard thuis door drs. Mark van Manen. Periodieke zorg en expertise behandelingen met 15+ jaar ervaring.",
-    url: "https://eqdent.nl",
-    images: [
-      {
-        url: "/DTS_The_Farm_Richard_Smith_Photos_ID3394.jpg",
-        width: 1200,
-        height: 630,
-        alt: "EqDent - Paardentandheelkunde op de boerderij",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://eqdent.nl",
-  },
-}
+
+
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
