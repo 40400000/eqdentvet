@@ -48,8 +48,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1" style={{color: 'var(--eqdent-dark-grey)'}}>Telefoon</h3>
                       <p className="mb-2" style={{color: 'var(--eqdent-text-grey)'}}>Voor afspraken en expertise zorg</p>
-                      <a href="tel:06-12345678" className="font-medium hover:opacity-80 transition-opacity cursor-pointer" style={{color: 'var(--eqdent-green)'}}>
-                        06-12345678
+                      <a href="tel:06-82857060" className="font-medium hover:opacity-80 transition-opacity cursor-pointer" style={{color: 'var(--eqdent-green)'}}>
+                        06-82857060
                       </a>
                     </div>
                   </div>

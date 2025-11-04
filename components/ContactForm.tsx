@@ -120,7 +120,7 @@ export function ContactForm({
               id="phone"
               name="phone"
               type="tel"
-              placeholder="06-12345678"
+              placeholder="06-82857060"
               required
               className="bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:bg-white"
             />
