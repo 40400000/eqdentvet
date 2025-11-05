@@ -273,7 +273,7 @@ export function ContactForm({
               id="phone"
               name="phone"
               type="tel"
-              placeholder="06-82857060"
+              placeholder="Uw nummer"
               required
               onChange={(e) => handleFieldChange('phone', e.target.value)}
               onBlur={(e) => handleFieldBlur('phone', e.target.value)}
