@@ -236,7 +236,7 @@ export default function EqdentLanding() {
         />
         <div className="absolute inset-0 z-1 bg-primary/20"></div>
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Sluit je aan bij paardenhouders die kiezen voor persoonlijke tandheelkundige zorg op locatie</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6">Sluit je aan bij paardenhouders die kiezen voor persoonlijke tandheelkundige zorg</h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10">
             Met de kwaliteit en precisie van kliniekzorg
           </p>
@@ -342,10 +342,10 @@ export default function EqdentLanding() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-light text-primary mb-6">Inschrijven en afspraak maken</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Neem contact op voor periodieke of expertise tandheelkundige zorg. Wij komen naar uw locatie.
+                Of het nu gaat om een routinecontrole of specialistische behandeling, neem contact met ons op. Wij komen bij u op locatie.
               </p>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-                Binnen twee werkdagen wordt er contact met u opgenomen.
+                Binnen twee werkdagen nemen wij contact met u op.
               </p>
             </div>
 

@@ -7,7 +7,7 @@ export function GeavanceerdeIngrepenSection() {
       <div className="container mx-auto px-6 lg:px-16">
         <div className="max-w-3xl mx-auto text-center mb-16">
 
-          <h2 className="text-3xl font-light text-primary mb-6">Expertise zorg</h2>
+          <h2 className="text-3xl font-light text-primary mb-6">Expertise en gespecialiseerde zorg</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Voor complexe tandheelkundige problemen bieden wij geavanceerde behandelingen 
             direct aan met de modernste technieken. Geen verwijzing nodig!
@@ -19,10 +19,13 @@ export function GeavanceerdeIngrepenSection() {
             <div className="md:col-span-2">
               <div className="bg-background p-8 rounded-xl shadow-sm border border-border mb-8">
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Wanneer uw paard een ernstige tandheelkundige aandoening ontwikkelt of een probleem wordt geïdentificeerd dat specialistische zorg vereist, kunnen deze worden behandeld met de modernste apparatuur en technieken. Als de behandeling niet op locatie plaats kan vinden zijn er goede contacten met gespecialiseerde klinieken om uw paard veilig en vertrouwd te verwijzen.
+                  Ook bij complexe tandheelkundige aandoeningen kunt u rechtstreeks bij ons terecht. Wij werken met geavanceerde technieken voor een veilige en effectieve behandeling.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Wanneer uw paard een tandheelkundig probleem heeft dat extra zorg of specialistische behandeling vraagt, voeren wij dit uit met moderne apparatuur en de nieuwste technieken. Is een behandeling niet op locatie mogelijk? Dan werken wij samen met gespecialiseerde klinieken, zodat uw paard veilig en vertrouwd kan worden doorverwezen.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Alle geavanceerde procedures worden uitgevoerd onder staande sedatie met pijnstilling en zonodig lokale verdovingen voor een pijnvrije behandeling. EQDent beschikt over jarenlange ervaring met complexe tandheelkundige ingrepen.
+                  Alle uitgebreide behandelingen worden uitgevoerd terwijl uw paard rustig blijft staan, onder lichte sedatie en met goede pijnstilling. Indien nodig gebruiken wij plaatselijke verdoving, zodat de behandeling volledig pijnvrij verloopt. Met jarenlange ervaring in complexe tandheelkundige ingrepen is uw paard bij EQDent in deskundige handen.
                 </p>
               </div>
 
@@ -67,8 +70,8 @@ export function GeavanceerdeIngrepenSection() {
               <div className="sticky top-24">
                 <div className="relative h-[250px] rounded-xl overflow-hidden mb-6">
                   <Image
-                    src="https://vhtnlfbnq3ecybmn.public.blob.vercel-storage.com/susanne_website/horse-teeth-canva-4-4-22-2-577ykb1Jmv8jtKYWrExHr6uscDLeqv.jpg"
-                    alt="Geavanceerde tandheelkundige ingreep"
+                    src="/DTS_OFF_GRID_Lewis_FERRIS_Photos_ID10549.jpg"
+                    alt="Paarden in natuurlijke omgeving"
                     fill
                     className="object-cover"
                   />

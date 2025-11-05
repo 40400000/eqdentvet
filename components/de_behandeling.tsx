@@ -39,7 +39,7 @@ export function BehandelingSection() {
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                     <p className="text-muted-foreground">
-                      <span className="font-medium text-primary">Onderzoek afwijkingen:</span> De bevindingen en behandelopties worden altijd grondig onderzocht, duidelijk besproken en in beeld gebracht.
+                      <span className="font-medium text-primary">Onderzoek afwijkingen:</span> De afwijkingen en behandelopties worden altijd grondig onderzocht, duidelijk besproken en in beeld gebracht.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -68,8 +68,8 @@ export function BehandelingSection() {
               <div className="sticky top-24">
                 <div className="relative h-[300px] rounded-xl overflow-hidden mb-6">
                   <Image
-                    src="https://vhtnlfbnq3ecybmn.public.blob.vercel-storage.com/susanne_website/horse-teeth-canva-4-4-22-2-577ykb1Jmv8jtKYWrExHr6uscDLeqv.jpg"
-                    alt="Gebitsbehandeling bij een paard"
+                    src="/DTS_OFF_GRID_Lewis_FERRIS_Photos_ID10549.jpg"
+                    alt="Paarden in natuurlijke omgeving"
                     fill
                     className="object-cover"
                   />
