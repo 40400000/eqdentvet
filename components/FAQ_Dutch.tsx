@@ -17,7 +17,7 @@ const faqData = [
   {
     id: "sedatie-behandeling",
     question: "Wordt er sedatie gebruikt tijdens behandelingen?",
-    answer: "Ja, voor veiligheid en comfort gebruiken wij lichte sedatie. Dit zorgt voor een stressvrije en grondige behandeling."
+    answer: "Ja, voor veiligheid en comfort gebruiken wij sedatie. Dit zorgt voor een stressvrije en grondige behandeling."
   },
   {
     id: "rijden-na-behandeling",

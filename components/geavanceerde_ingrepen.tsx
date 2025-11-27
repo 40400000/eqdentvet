@@ -25,7 +25,7 @@ export function GeavanceerdeIngrepenSection() {
                   Wanneer uw paard een tandheelkundig probleem heeft dat extra zorg of specialistische behandeling vraagt, voeren wij dit uit met moderne apparatuur en de nieuwste technieken. Is een behandeling niet op locatie mogelijk? Dan werken wij samen met gespecialiseerde klinieken, zodat uw paard veilig en vertrouwd kan worden doorverwezen.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Alle uitgebreide behandelingen worden uitgevoerd terwijl uw paard rustig blijft staan, onder lichte sedatie en met goede pijnstilling. Indien nodig gebruiken wij plaatselijke verdoving, zodat de behandeling volledig pijnvrij verloopt. Met jarenlange ervaring in complexe tandheelkundige ingrepen is uw paard bij EQDent in deskundige handen.
+                  Alle uitgebreide behandelingen worden uitgevoerd terwijl uw paard rustig blijft staan, onder sedatie en met goede pijnstilling. Indien nodig gebruiken wij plaatselijke verdoving, zodat de behandeling volledig pijnvrij verloopt. Met jarenlange ervaring in complexe tandheelkundige ingrepen is uw paard bij EQDent in deskundige handen.
                 </p>
               </div>
 
