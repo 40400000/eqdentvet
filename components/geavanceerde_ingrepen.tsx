@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { CheckCircle, AlertTriangle } from "lucide-react"
-
+//kkkkk
 export function GeavanceerdeIngrepenSection() {
   return (
     <section id="geavanceerde-ingrepen" className="py-16 lg:py-24" style={{backgroundColor: 'var(--eqdent-white-green)'}}>
