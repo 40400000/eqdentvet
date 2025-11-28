@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   keywords: "privacybeleid EQDent, privacy paardentandheelkunde, AVG paardendierenarts, gegevensbescherming paard",
   openGraph: {
     title: "Privacybeleid - EQDent",
-    description: "Privacybeleid van EQDent voor paardentandheelkundige behandelingen door drs. Mark van Manen.",
+    description: "Privacybeleid van EQDent",
     url: "https://eqdent.nl/privacy-beleid",
     images: [
       {
