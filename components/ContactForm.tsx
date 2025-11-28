@@ -372,7 +372,7 @@ export function ContactForm({
       )}
 
       <p className="text-sm text-muted-foreground text-center mt-6">
-        We respecteren uw privacy en nemen binnen twee dagen contact met u op voor het plannen van een afspraak.
+        We nemen binnen twee dagen contact met u op voor het plannen van een afspraak. Bij het inleveren van het contactformulier gaat u akkoord met de algemene voorwaarden.
       </p>
     </div>
   )
