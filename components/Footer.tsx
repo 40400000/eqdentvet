@@ -42,6 +42,11 @@ export function Footer() {
                 Algemene Voorwaarden
               </Link>
             </p>
+            <p className="text-sm text-primary-foreground/80">
+              <Link href="/privacy-beleid" className="hover:text-primary-foreground underline">
+                Privacybeleid
+              </Link>
+            </p>
             <p className="text-sm text-primary-foreground/80">KvK: 98546546</p>
             <p className="text-sm text-primary-foreground/80">CIBG: 140370</p>
           </div>
