@@ -9,6 +9,7 @@ import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react"
 import { submitWaitlistForm } from "@/app/actions"
 import { formSchema } from "@/lib/validations"
 import { z } from "zod"
+import { AddressAutocomplete } from "@/components/AddressAutocomplete"
 
 interface ContactFormProps {
   title?: string
@@ -214,22 +215,23 @@ export function ContactForm({
             <Label htmlFor="address" className="text-foreground font-medium">
               Adres *
             </Label>
-            <Input
+            <AddressAutocomplete
               id="address"
               name="address"
               placeholder="Straat, huisnummer, postcode, plaats"
               required
               value={address}
-              onChange={(e) => {
-                setAddress(e.target.value)
-                handleFieldChange('address', e.target.value)
+              onChange={(value) => {
+                setAddress(value)
+                handleFieldChange('address', value)
               }}
-              onBlur={(e) => handleFieldBlur('address', e.target.value)}
-              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
-                touched.address && errors.address 
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
-                  : 'border-border'
+              onBlur={() => handleFieldBlur('address', address)}
+              className={`${
+                touched.address && errors.address
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                  : ''
               }`}
+              error={touched.address && !!errors.address}
             />
             {touched.address && errors.address && (
               <div className="flex items-center gap-1 text-red-600 text-sm">
@@ -309,29 +311,30 @@ export function ContactForm({
                 </Label>
               </div>
             </div>
-            <Input
+            <AddressAutocomplete
               id="stalAddress"
               name={sameAsHome ? "" : "stalAddress"}
               placeholder="Straat, huisnummer, postcode, plaats"
               required={!sameAsHome}
               value={sameAsHome ? address : stalAddress}
               disabled={sameAsHome}
-              onChange={(e) => {
+              onChange={(value) => {
                 if (!sameAsHome) {
-                  setStalAddress(e.target.value)
-                  handleFieldChange('stalAddress', e.target.value)
+                  setStalAddress(value)
+                  handleFieldChange('stalAddress', value)
                 }
               }}
-              onBlur={(e) => {
+              onBlur={() => {
                 if (!sameAsHome) {
-                  handleFieldBlur('stalAddress', e.target.value)
+                  handleFieldBlur('stalAddress', stalAddress)
                 }
               }}
-              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white disabled:bg-muted disabled:text-muted-foreground ${
+              className={`${
                 touched.stalAddress && errors.stalAddress && !sameAsHome
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
-                  : 'border-border'
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                  : ''
               }`}
+              error={touched.stalAddress && !!errors.stalAddress && !sameAsHome}
             />
             {touched.stalAddress && errors.stalAddress && !sameAsHome && (
               <div className="flex items-center gap-1 text-red-600 text-sm">
