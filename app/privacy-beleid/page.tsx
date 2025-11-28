@@ -35,25 +35,23 @@ export default function PrivacyBeleid() {
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4" style={{color: 'var(--eqdent-green-dark)'}}>2. Welke gegevens verzamelen wij?</h2>
-            <p className="mb-4">EQDent verzamelt en verwerkt de volgende persoonsgegevens:</p>
+            <p className="mb-4">Wanneer u zich via ons contactformulier inschrijft voor een afspraak, verzamelen wij de volgende persoonsgegevens:</p>
             <ul className="list-disc pl-6 space-y-2 mb-6">
-              <li><strong>Contactgegevens:</strong> naam, adres, telefoonnummer en e-mailadres</li>
-              <li><strong>Afspraakgegevens:</strong> datum, tijd en locatie van afspraken, behandelingsverzoeken</li>
-              <li><strong>Patiëntgegevens:</strong> informatie over uw paard(en), waaronder naam, ras, leeftijd en medische geschiedenis</li>
-              <li><strong>Betalingsgegevens:</strong> facturatiegegevens en betaalinformatie</li>
-              <li><strong>Communicatiegegevens:</strong> correspondentie via e-mail, telefoon of contactformulieren</li>
+              <li><strong>Naam:</strong> voornaam en achternaam</li>
+              <li><strong>Adres:</strong> uw thuisadres (straat, huisnummer, postcode, plaats)</li>
+              <li><strong>Staladres:</strong> het adres waar de behandeling dient plaats te vinden</li>
+              <li><strong>E-mailadres:</strong> voor communicatie en afspraakbevestigingen</li>
+              <li><strong>Telefoonnummer:</strong> voor telefonisch contact</li>
+              <li><strong>Communicatiegegevens:</strong> correspondentie via e-mail en telefoon naar aanleiding van uw aanvraag</li>
             </ul>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4" style={{color: 'var(--eqdent-green-dark)'}}>3. Doel van de gegevensverwerking</h2>
-            <p className="mb-4">Wij gebruiken uw persoonsgegevens voor de volgende doeleinden:</p>
+            <p className="mb-4">Wij gebruiken uw persoonsgegevens uitsluitend voor de volgende doeleinden:</p>
             <ul className="list-disc pl-6 space-y-2 mb-6">
-              <li><strong>Afspraakbeheer:</strong> het maken, bevestigen en beheren van afspraken voor diergeneeskundige behandelingen</li>
-              <li><strong>Dienstverlening:</strong> het uitvoeren van diergeneeskundige behandelingen en het leveren van diergeneesmiddelen</li>
-              <li><strong>Communicatie:</strong> contact opnemen voor afspraakherinneringen, behandelingsinformatie en andere zaken gerelateerd aan onze dienstverlening</li>
-              <li><strong>Administratie:</strong> het bijhouden van patiëntendossiers en behandelingsgegevens conform wettelijke verplichtingen</li>
-              <li><strong>Facturering:</strong> het verzenden van facturen en het verwerken van betalingen</li>
-              <li><strong>Klantenservice:</strong> het beantwoorden van vragen en het afhandelen van klachten</li>
-              <li><strong>Wettelijke verplichtingen:</strong> het voldoen aan wet- en regelgeving, waaronder administratieve verplichtingen als dierenarts</li>
+              <li><strong>Afspraakbeheer:</strong> het maken, bevestigen en plannen van afspraken</li>
+              <li><strong>Communicatie:</strong> contact opnemen om een afspraak in te plannen en u te informeren over de planning</li>
+              <li><strong>Dienstverlening:</strong> het kunnen uitvoeren van de diergeneeskundige behandeling op de juiste locatie</li>
+              <li><strong>Administratie:</strong> het bijhouden van contactgegevens en afspraken</li>
             </ul>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4" style={{color: 'var(--eqdent-green-dark)'}}>4. Grondslag voor gegevensverwerking</h2>
@@ -67,30 +65,27 @@ export default function PrivacyBeleid() {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4" style={{color: 'var(--eqdent-green-dark)'}}>5. Gegevens delen met derden</h2>
             <p className="mb-4">
-              EQDent verstrekt uw persoonsgegevens uitsluitend aan derden indien dit noodzakelijk is voor de uitvoering
-              van onze dienstverlening of om te voldoen aan een wettelijke verplichting. Wij kunnen uw gegevens delen met:
+              EQDent deelt uw persoonsgegevens niet met derden, tenzij dit noodzakelijk is om te voldoen aan een
+              wettelijke verplichting (bijvoorbeeld in geval van een gerechtelijk bevel).
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-6">
-              <li><strong>Collega dierenartsen:</strong> voor verwijzingen of second opinions</li>
-              <li><strong>Laboratoria:</strong> voor diagnostische onderzoeken</li>
-              <li><strong>Administratiekantoren:</strong> voor financiële administratie</li>
-              <li><strong>Overheidsinstanties:</strong> wanneer wij hiertoe wettelijk verplicht zijn</li>
-            </ul>
             <p className="mb-4">
-              Wij verkopen uw persoonsgegevens nooit aan derden en verstrekken deze uitsluitend indien dit noodzakelijk is
-              voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting.
+              Wij verkopen uw persoonsgegevens nooit aan derden. Uw gegevens blijven uitsluitend bij EQDent en
+              worden alleen gebruikt voor het doel waarvoor u ze heeft verstrekt: het maken van een afspraak.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4" style={{color: 'var(--eqdent-green-dark)'}}>6. Bewaartermijn</h2>
             <p className="mb-4">
               Wij bewaren uw persoonsgegevens niet langer dan noodzakelijk voor de doeleinden waarvoor de gegevens zijn
-              verzameld. De bewaartermijnen zijn als volgt:
+              verzameld. De bewaartermijn is als volgt:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-6">
-              <li><strong>Patiëntendossiers:</strong> minimaal 5 jaar na de laatste behandeling (conform wettelijke verplichtingen)</li>
-              <li><strong>Financiële administratie:</strong> 7 jaar (conform fiscale wetgeving)</li>
-              <li><strong>Contactformuliergegevens:</strong> maximaal 2 jaar na ontvangst, tenzij deze leiden tot een behandelrelatie</li>
+              <li><strong>Contactformuliergegevens:</strong> maximaal 2 jaar na ontvangst voor afspraakplanning en communicatie</li>
+              <li><strong>Correspondentie:</strong> wij bewaren e-mailcorrespondentie en communicatie zolang dit noodzakelijk is voor de afwikkeling van de afspraak</li>
             </ul>
+            <p className="mb-4">
+              Na afloop van deze periode worden uw gegevens verwijderd, tenzij u aangeeft deze langer te willen bewaren
+              voor toekomstige afspraken.
+            </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4" style={{color: 'var(--eqdent-green-dark)'}}>7. Beveiliging van gegevens</h2>
             <p className="mb-4">
