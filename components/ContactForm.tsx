@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,10 +18,10 @@ interface ContactFormProps {
   showHeader?: boolean
 }
 
-export function ContactForm({ 
-  title = "Inschrijven en afspraak maken", 
+export function ContactForm({
+  title = "Inschrijven en afspraak maken",
   subtitle = "Neem contact op voor periodieke of expertise tandheelkundige zorg. Wij komen naar uw locatie.",
-  showHeader = true 
+  showHeader = true
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState("")
@@ -101,11 +102,11 @@ export function ContactForm({
 
   const handleSubmit = async (formData: FormData) => {
     console.log("🎯 Client: Form submission started")
-    
+
     // Log form data for debugging
     const formEntries = Array.from(formData.entries())
     console.log("📝 Client: Form data entries:", formEntries)
-    
+
     if (!validateForm(formData)) {
       console.log("❌ Client: Form validation failed")
       return
@@ -113,19 +114,19 @@ export function ContactForm({
 
     console.log("✅ Client: Form validation passed")
     setIsSubmitting(true)
-    
+
     try {
       console.log("🚀 Client: Calling server action...")
       const result = await submitWaitlistForm(formData)
       console.log("📨 Client: Server response:", result)
-      
+
       setSubmitMessage(result.message)
-      
+
       if (!result.success) {
         console.log("⚠️ Client: Server returned failure")
         return
       }
-      
+
       console.log("🎉 Client: Form submission successful!")
     } catch (error) {
       console.error("❌ Client: Error during submission:", error)
@@ -146,12 +147,12 @@ export function ContactForm({
           )}
         </div>
       )}
-      
+
       {submitMessage ? (
         <div className="text-center py-12">
-          <div className="border rounded-lg p-8" style={{backgroundColor: 'var(--eqdent-green-light)', borderColor: 'var(--eqdent-green)'}}>
-            <CheckCircle className="h-16 w-16 mx-auto mb-4" style={{color: 'var(--eqdent-green)'}} />
-            <p className="text-xl font-semibold" style={{color: 'var(--eqdent-green-dark)'}}>{submitMessage}</p>
+          <div className="border rounded-lg p-8" style={{ backgroundColor: 'var(--eqdent-green-light)', borderColor: 'var(--eqdent-green)' }}>
+            <CheckCircle className="h-16 w-16 mx-auto mb-4" style={{ color: 'var(--eqdent-green)' }} />
+            <p className="text-xl font-semibold" style={{ color: 'var(--eqdent-green-dark)' }}>{submitMessage}</p>
           </div>
         </div>
       ) : (
@@ -172,11 +173,10 @@ export function ContactForm({
                 required
                 onChange={(e) => handleFieldChange('firstName', e.target.value)}
                 onBlur={(e) => handleFieldBlur('firstName', e.target.value)}
-                className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
-                  touched.firstName && errors.firstName 
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
-                    : 'border-border'
-                }`}
+                className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${touched.firstName && errors.firstName
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                  : 'border-border'
+                  }`}
               />
               {touched.firstName && errors.firstName && (
                 <div className="flex items-center gap-1 text-red-600 text-sm">
@@ -196,11 +196,10 @@ export function ContactForm({
                 required
                 onChange={(e) => handleFieldChange('lastName', e.target.value)}
                 onBlur={(e) => handleFieldBlur('lastName', e.target.value)}
-                className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
-                  touched.lastName && errors.lastName 
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
-                    : 'border-border'
-                }`}
+                className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${touched.lastName && errors.lastName
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                  : 'border-border'
+                  }`}
               />
               {touched.lastName && errors.lastName && (
                 <div className="flex items-center gap-1 text-red-600 text-sm">
@@ -226,11 +225,10 @@ export function ContactForm({
                 handleFieldChange('address', value)
               }}
               onBlur={() => handleFieldBlur('address', address)}
-              className={`${
-                touched.address && errors.address
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
-                  : ''
-              }`}
+              className={`${touched.address && errors.address
+                ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                : ''
+                }`}
               error={touched.address && !!errors.address}
             />
             {touched.address && errors.address && (
@@ -253,11 +251,10 @@ export function ContactForm({
               required
               onChange={(e) => handleFieldChange('email', e.target.value)}
               onBlur={(e) => handleFieldBlur('email', e.target.value)}
-              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
-                touched.email && errors.email 
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
-                  : 'border-border'
-              }`}
+              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${touched.email && errors.email
+                ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                : 'border-border'
+                }`}
             />
             {touched.email && errors.email && (
               <div className="flex items-center gap-1 text-red-600 text-sm">
@@ -279,11 +276,10 @@ export function ContactForm({
               required
               onChange={(e) => handleFieldChange('phone', e.target.value)}
               onBlur={(e) => handleFieldBlur('phone', e.target.value)}
-              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${
-                touched.phone && errors.phone 
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200' 
-                  : 'border-border'
-              }`}
+              className={`bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white ${touched.phone && errors.phone
+                ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                : 'border-border'
+                }`}
             />
             {touched.phone && errors.phone && (
               <div className="flex items-center gap-1 text-red-600 text-sm">
@@ -329,11 +325,10 @@ export function ContactForm({
                   handleFieldBlur('stalAddress', stalAddress)
                 }
               }}
-              className={`${
-                touched.stalAddress && errors.stalAddress && !sameAsHome
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
-                  : ''
-              }`}
+              className={`${touched.stalAddress && errors.stalAddress && !sameAsHome
+                ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                : ''
+                }`}
               error={touched.stalAddress && !!errors.stalAddress && !sameAsHome}
             />
             {touched.stalAddress && errors.stalAddress && !sameAsHome && (
@@ -362,7 +357,7 @@ export function ContactForm({
               type="submit"
               disabled={isSubmitting}
               size="lg"
-              className="w-full text-white py-4 text-lg font-medium hover:opacity-90 transition-opacity" style={{backgroundColor: 'var(--eqdent-green)'}}
+              className="w-full text-white py-4 text-lg font-medium hover:opacity-90 transition-opacity" style={{ backgroundColor: 'var(--eqdent-green)' }}
             >
               {isSubmitting ? "Bezig met verzenden..." : "Inschrijven en afspraak maken"}
               {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
@@ -372,7 +367,7 @@ export function ContactForm({
       )}
 
       <p className="text-sm text-muted-foreground text-center mt-6">
-        We nemen binnen twee dagen contact met u op voor het plannen van een afspraak. Bij het inleveren van het contactformulier gaat u akkoord met de algemene voorwaarden.
+        Gegevens worden verwekrt volgens het <Link href="/privacy-beleid" className="underline">privacybeleid</Link>.
       </p>
     </div>
   )
