@@ -72,7 +72,42 @@ export default function ContactPage() {
                 </div>
               </div>
 
-
+              {/* B2B / EQDent EU compact card */}
+              <Link
+                href="https://eqdent.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div
+                  className="rounded-xl border border-border bg-white shadow-sm hover:shadow-md transition-shadow duration-300 p-4 flex items-center gap-4"
+                >
+                  <div
+                    className="flex-shrink-0 w-20 h-16 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: '#F5F8FB' }}
+                  >
+                    <Image
+                      src="/eqdent-eu-logo.png"
+                      alt="EQDent EU"
+                      width={400}
+                      height={73}
+                      className="w-14 h-auto object-contain"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[11px] uppercase tracking-wider font-medium mb-0.5" style={{ color: '#1F6FA1' }}>
+                      EQDent EU · B2B
+                    </p>
+                    <h3 className="text-sm font-semibold mb-0.5 truncate" style={{ color: 'var(--eqdent-dark-grey)' }}>
+                      Instrumenten voor professionals
+                    </h3>
+                    <span className="inline-flex items-center text-xs font-medium group-hover:opacity-80 transition-opacity" style={{ color: '#1F6FA1' }}>
+                      Bekijk eqdent.eu
+                      <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
 
             {/* Right Column */}
@@ -94,69 +129,6 @@ export default function ContactPage() {
               <ContactForm />
             </motion.div>
           </div>
-
-          {/* B2B / EQDent EU section */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="mt-24"
-          >
-            <div className="text-center mb-8">
-              <p className="text-xs uppercase tracking-[0.2em] font-medium mb-3" style={{color: 'var(--eqdent-text-grey)'}}>
-                Voor professionals
-              </p>
-              <h2 className="text-3xl font-light" style={{color: 'var(--eqdent-green-dark)'}}>
-                Tandheelkundige instrumenten voor de praktijk
-              </h2>
-            </div>
-
-            <Link
-              href="https://eqdent.eu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block max-w-3xl mx-auto"
-            >
-              <div className="bg-white rounded-2xl border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                <div className="grid md:grid-cols-5 items-center">
-                  <div
-                    className="md:col-span-2 flex items-center justify-center p-10 md:p-12"
-                    style={{backgroundColor: '#F5F8FB'}}
-                  >
-                    <Image
-                      src="/eqdent-eu-logo.png"
-                      alt="EQDent EU — professionele tandheelkundige instrumenten"
-                      width={400}
-                      height={73}
-                      className="w-full max-w-[220px] h-auto object-contain"
-                      priority={false}
-                    />
-                  </div>
-                  <div className="md:col-span-3 p-8 md:p-10">
-                    <p className="text-sm font-medium mb-2" style={{color: '#1F6FA1'}}>
-                      EQDent EU · B2B
-                    </p>
-                    <h3 className="text-xl font-medium mb-3" style={{color: 'var(--eqdent-dark-grey)'}}>
-                      Care without compromise.
-                    </h3>
-                    <p className="leading-relaxed mb-6" style={{color: 'var(--eqdent-text-grey)'}}>
-                      EQDent EU ontwikkelt professionele tandheelkundige instrumenten voor paardentandartsen,
-                      waaronder de NODent™ — een innovatieve oplossing voor stabiele toegang tot het gebit
-                      bij paarden zonder snijtanden.
-                    </p>
-                    <span
-                      className="inline-flex items-center font-medium group-hover:opacity-80 transition-opacity"
-                      style={{color: '#1F6FA1'}}
-                    >
-                      Bekijk eqdent.eu
-                      <ArrowUpRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </motion.section>
         </div>
       </div>
 
