@@ -1,7 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { buildConfig } from "payload";
-import { sqliteAdapter } from "@payloadcms/db-sqlite";
+import { vercelPostgresAdapter } from "@payloadcms/db-vercel-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import sharp from "sharp";
@@ -34,9 +34,11 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URI ?? "file:./eqdent.db",
+  db: vercelPostgresAdapter({
+    push: true,
+    pool: {
+      connectionString:
+        process.env.POSTGRES_URL ?? process.env.DATABASE_URL,
     },
   }),
   sharp,
