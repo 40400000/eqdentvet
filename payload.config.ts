@@ -9,6 +9,8 @@ import sharp from "sharp";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Posts } from "./collections/Posts";
+import { seed } from "./lib/seed";
+import { migrations } from "./migrations";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -26,6 +28,12 @@ export default buildConfig({
         Icon: false,
         Logo: false,
       },
+      views: {
+        login: {
+          path: "/login",
+          Component: "/components/admin/PasswordOnlyLogin#PasswordOnlyLogin",
+        },
+      },
     },
   },
   editor: lexicalEditor({}),
@@ -35,13 +43,16 @@ export default buildConfig({
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   db: vercelPostgresAdapter({
-    push: true,
     pool: {
       connectionString:
         process.env.POSTGRES_URL ?? process.env.DATABASE_URL,
     },
+    prodMigrations: migrations,
   }),
   sharp,
+  onInit: async (payload) => {
+    await seed(payload);
+  },
   plugins: blobReadWriteToken
     ? [
         vercelBlobStorage({
