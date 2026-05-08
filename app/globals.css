@@ -146,3 +146,88 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Blog body styling — applied to rendered Lexical rich text */
+.prose-eqdent {
+  color: var(--eqdent-text-grey);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-eqdent > * + * {
+  margin-top: 1.25rem;
+}
+.prose-eqdent h2 {
+  font-size: 1.875rem;
+  line-height: 1.25;
+  font-weight: 400;
+  color: var(--primary);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.prose-eqdent h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--primary);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.prose-eqdent h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--eqdent-dark-grey);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-eqdent p {
+  color: var(--eqdent-text-grey);
+}
+.prose-eqdent strong {
+  color: var(--eqdent-dark-grey);
+  font-weight: 600;
+}
+.prose-eqdent a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.prose-eqdent a:hover {
+  opacity: 0.8;
+}
+.prose-eqdent ul,
+.prose-eqdent ol {
+  padding-left: 1.5rem;
+}
+.prose-eqdent ul {
+  list-style: disc;
+}
+.prose-eqdent ol {
+  list-style: decimal;
+}
+.prose-eqdent li + li {
+  margin-top: 0.5rem;
+}
+.prose-eqdent blockquote {
+  border-left: 4px solid var(--primary);
+  background-color: var(--eqdent-green-light);
+  padding: 1rem 1.25rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: var(--eqdent-dark-grey);
+}
+.prose-eqdent hr {
+  border: none;
+  border-top: 1px solid var(--eqdent-light-grey);
+  margin: 3rem 0;
+}
+.prose-eqdent code {
+  background-color: var(--eqdent-green-light);
+  color: var(--eqdent-green-dark);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+.prose-eqdent figure {
+  margin-left: 0;
+  margin-right: 0;
+}

@@ -1,7 +1,9 @@
 "use client"
 
+import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react"
 import { ContactForm } from "@/components/ContactForm"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
@@ -70,7 +72,39 @@ export default function ContactPage() {
                 </div>
               </div>
 
-
+              {/* EQDent NODent referral card */}
+              <Link
+                href="https://eqdent.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div
+                  className="rounded-xl border border-border bg-white shadow-sm hover:shadow-md transition-shadow duration-300 p-4 flex items-center gap-4"
+                >
+                  <div
+                    className="flex-shrink-0 w-20 h-16 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: '#F5F8FB' }}
+                  >
+                    <Image
+                      src="/eqdent-eu-logo.png"
+                      alt="EQDent NODent"
+                      width={400}
+                      height={73}
+                      className="w-14 h-auto object-contain"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-semibold mb-0.5" style={{ color: 'var(--eqdent-dark-grey)' }}>
+                      EQDent NODent
+                    </h3>
+                    <span className="inline-flex items-center text-xs font-medium group-hover:opacity-80 transition-opacity" style={{ color: '#1F6FA1' }}>
+                      Bekijk eqdent.eu
+                      <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
 
             {/* Right Column */}
