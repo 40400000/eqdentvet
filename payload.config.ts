@@ -53,15 +53,13 @@ export default buildConfig({
   onInit: async (payload) => {
     await seed(payload);
   },
-  plugins: blobReadWriteToken
-    ? [
-        vercelBlobStorage({
-          enabled: true,
-          collections: {
-            media: true,
-          },
-          token: blobReadWriteToken,
-        }),
-      ]
-    : [],
+  plugins: [
+    vercelBlobStorage({
+      enabled: Boolean(blobReadWriteToken),
+      collections: {
+        media: true,
+      },
+      token: blobReadWriteToken,
+    }),
+  ],
 });
