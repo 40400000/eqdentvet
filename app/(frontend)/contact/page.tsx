@@ -72,7 +72,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* B2B / EQDent EU compact card */}
+              {/* EQDent NODent referral card */}
               <Link
                 href="https://eqdent.eu"
                 target="_blank"
@@ -88,18 +88,15 @@ export default function ContactPage() {
                   >
                     <Image
                       src="/eqdent-eu-logo.png"
-                      alt="EQDent EU"
+                      alt="EQDent NODent"
                       width={400}
                       height={73}
                       className="w-14 h-auto object-contain"
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[11px] uppercase tracking-wider font-medium mb-0.5" style={{ color: '#1F6FA1' }}>
-                      EQDent EU · B2B
-                    </p>
-                    <h3 className="text-sm font-semibold mb-0.5 truncate" style={{ color: 'var(--eqdent-dark-grey)' }}>
-                      Instrumenten voor professionals
+                    <h3 className="text-sm font-semibold mb-0.5" style={{ color: 'var(--eqdent-dark-grey)' }}>
+                      EQDent NODent
                     </h3>
                     <span className="inline-flex items-center text-xs font-medium group-hover:opacity-80 transition-opacity" style={{ color: '#1F6FA1' }}>
                       Bekijk eqdent.eu

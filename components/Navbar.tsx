@@ -105,10 +105,10 @@ export function Navbar({ variant = "default" }: { variant?: "default" | "white" 
                   Expertise zorg
                 </Link>
                 <Link
-                  href="/blog"
+                  href="/kennisbank"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  Blog
+                  Kennisbank
                 </Link>
               </div>
               <Link
@@ -200,11 +200,11 @@ export function Navbar({ variant = "default" }: { variant?: "default" | "white" 
                       Expertise zorg
                     </Link>
                     <Link
-                      href="/blog"
+                      href="/kennisbank"
                       onClick={closeMenu}
                       className="text-base font-light text-foreground hover:text-primary transition-all duration-200 py-4 px-3 rounded-lg hover:bg-accent/50"
                     >
-                      Blog
+                      Kennisbank
                     </Link>
                     <Link
                       href="/contact"

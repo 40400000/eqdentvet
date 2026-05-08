@@ -50,11 +50,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt ?? undefined,
-    alternates: { canonical: `https://eqdent.nl/blog/${post.slug}` },
+    alternates: { canonical: `https://eqdent.nl/kennisbank/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt ?? undefined,
-      url: `https://eqdent.nl/blog/${post.slug}`,
+      url: `https://eqdent.nl/kennisbank/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt ?? undefined,
       images: cover?.url
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function KennisPostPage({ params }: Props) {
   const { slug } = await params;
   const post = await fetchPost(slug);
   if (!post) notFound();
@@ -88,10 +88,10 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <Link
-            href="/blog"
+            href="/kennisbank"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
           >
-            ← Terug naar blog
+            ← Terug naar kennisbank
           </Link>
 
           <header className="mb-10">
@@ -112,13 +112,16 @@ export default async function BlogPostPage({ params }: Props) {
           </header>
 
           {cover?.url ? (
-            <div className="relative aspect-[16/9] mb-12 rounded-xl overflow-hidden shadow-sm">
+            <div
+              className="relative aspect-[16/9] mb-12 rounded-xl overflow-hidden shadow-sm"
+              style={{ backgroundColor: "var(--eqdent-white-green)" }}
+            >
               <Image
                 src={cover.url}
                 alt={cover.alt ?? post.title}
                 fill
                 priority
-                className="object-cover"
+                className="object-contain p-8"
                 sizes="(min-width: 768px) 768px, 100vw"
               />
             </div>

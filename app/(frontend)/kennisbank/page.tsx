@@ -11,15 +11,15 @@ import type { Media, Post } from "@/payload-types";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Kennisbank",
   description:
-    "Verhalen, kennis en ervaringen uit de paardentandheelkundige praktijk van EQDent en drs. Mark van Manen.",
-  alternates: { canonical: "https://eqdent.nl/blog" },
+    "Kennisbank van EQDent: artikelen, achtergronden en kennis uit de paardentandheelkundige praktijk van drs. Mark van Manen.",
+  alternates: { canonical: "https://eqdent.nl/kennisbank" },
   openGraph: {
-    title: "Blog — EQDent",
+    title: "Kennisbank — EQDent",
     description:
-      "Verhalen, kennis en ervaringen uit de paardentandheelkundige praktijk van EQDent.",
-    url: "https://eqdent.nl/blog",
+      "Kennisbank van EQDent: artikelen, achtergronden en kennis uit de paardentandheelkundige praktijk.",
+    url: "https://eqdent.nl/kennisbank",
   },
 };
 
@@ -32,7 +32,7 @@ const formatDate = (value?: string | null) => {
   }).format(new Date(value));
 };
 
-export default async function BlogIndexPage() {
+export default async function KennisIndexPage() {
   const payload = await getPayload({ config });
   const result = await payload.find({
     collection: "posts",
@@ -54,10 +54,10 @@ export default async function BlogIndexPage() {
       >
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h1 className="text-4xl sm:text-5xl font-light text-primary mb-6">
-            Blog
+            Kennisbank
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Verhalen, achtergronden en kennis uit de paardentandheelkundige
+            Artikelen, achtergronden en kennis uit de paardentandheelkundige
             praktijk. Lees mee over zorg, expertise en het welzijn van uw
             paard.
           </p>
@@ -84,14 +84,17 @@ export default async function BlogIndexPage() {
                     key={post.id}
                     className="group bg-background rounded-xl shadow-sm border border-border overflow-hidden flex flex-col hover:shadow-md transition-shadow"
                   >
-                    <Link href={`/blog/${post.slug}`} className="block">
-                      <div className="relative aspect-[16/10] bg-muted">
+                    <Link href={`/kennisbank/${post.slug}`} className="block">
+                      <div
+                        className="relative aspect-[16/10]"
+                        style={{ backgroundColor: "var(--eqdent-white-green)" }}
+                      >
                         {cover?.url ? (
                           <Image
                             src={cover.url}
                             alt={cover.alt ?? post.title}
                             fill
-                            className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                            className="object-contain p-6 group-hover:scale-[1.02] transition-transform duration-300"
                             sizes="(min-width: 768px) 50vw, 100vw"
                           />
                         ) : (
@@ -116,7 +119,7 @@ export default async function BlogIndexPage() {
                       ) : null}
                       <h2 className="text-xl font-medium text-primary mb-3">
                         <Link
-                          href={`/blog/${post.slug}`}
+                          href={`/kennisbank/${post.slug}`}
                           className="hover:opacity-80 transition-opacity"
                         >
                           {post.title}
@@ -128,7 +131,7 @@ export default async function BlogIndexPage() {
                         </p>
                       ) : null}
                       <Link
-                        href={`/blog/${post.slug}`}
+                        href={`/kennisbank/${post.slug}`}
                         className="inline-flex items-center font-medium text-primary hover:opacity-80 transition-opacity mt-auto"
                       >
                         Lees verder →

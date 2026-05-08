@@ -13,8 +13,8 @@ import {
 export const Posts: CollectionConfig = {
   slug: "posts",
   labels: {
-    singular: "Blogartikel",
-    plural: "Blogartikelen",
+    singular: "Kennisartikel",
+    plural: "Kennisartikelen",
   },
   access: {
     // Anyone can read published posts; drafts/scheduled stay hidden until logged in
@@ -56,7 +56,7 @@ export const Posts: CollectionConfig = {
       index: true,
       admin: {
         description:
-          "Wordt gebruikt in de URL: /blog/uw-slug. Gebruik kleine letters en streepjes.",
+          "Wordt gebruikt in de URL: /kennisbank/uw-slug. Gebruik kleine letters en streepjes.",
       },
     },
     {

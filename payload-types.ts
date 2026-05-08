@@ -127,7 +127,7 @@ export interface Post {
   id: number;
   title: string;
   /**
-   * Wordt gebruikt in de URL: /blog/uw-slug. Gebruik kleine letters en streepjes.
+   * Wordt gebruikt in de URL: /kennisbank/uw-slug. Gebruik kleine letters en streepjes.
    */
   slug: string;
   /**

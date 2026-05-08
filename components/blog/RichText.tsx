@@ -32,7 +32,7 @@ const internalDocToHref = (link: SerializedLinkNode): string => {
       "slug" in fields.doc.value
         ? (fields.doc.value as { slug?: string }).slug
         : undefined;
-    if (fields.doc.relationTo === "posts" && slug) return `/blog/${slug}`;
+    if (fields.doc.relationTo === "posts" && slug) return `/kennisbank/${slug}`;
   }
   return fields.url ?? "#";
 };
