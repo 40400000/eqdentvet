@@ -72,7 +72,7 @@ async function ensureWelcomePost(payload: Payload): Promise<void> {
       title: "Welkom bij EQDent",
       slug: "welkom-bij-eqdent",
       excerpt:
-        "Professionele paardentandheelkunde bij het paard thuis. Met meer dan 15 jaar ervaring biedt drs. Mark van Manen tweedelijns tandheelkundige zorg op locatie — voor het welzijn, de gezondheid en de duurzame prestaties van uw paard.",
+        "Professionele paardentandheelkunde bij het paard thuis. Met meer dan 15 jaar ervaring biedt drs. Mark van Manen tweedelijns tandheelkundige zorg op locatie, voor het welzijn, de gezondheid en de duurzame prestaties van uw paard.",
       author: "drs. Mark van Manen",
       publishedAt: new Date().toISOString(),
       coverImage: coverImageId,
@@ -133,15 +133,15 @@ const welcomeContent: Post["content"] = {
     direction: "ltr",
     children: [
       p(
-        "Welkom op de blog van EQDent. Hier delen we kennis, verhalen en achtergronden uit onze paardentandheelkundige praktijk — over zorg, expertise en het welzijn van uw paard.",
+        "Welkom op de kennisbank van EQDent. Hier delen we kennis, verhalen en achtergronden uit onze paardentandheelkundige praktijk over zorg, expertise en het welzijn van uw paard.",
       ),
       h2("Professionele zorg op locatie"),
       p(
-        "Bij EQDent geloven we dat tandheelkunde meer is dan het verzorgen van een gebit. Het is een essentieel onderdeel van het welzijn, de gezondheid en de duurzame prestaties van elk paard. Wij combineren medische expertise op tweedelijns niveau met een persoonlijke aanpak die zorgt voor vertrouwen en rust — voor paard én eigenaar.",
+        "Bij EQDent geloven we dat tandheelkunde meer is dan het verzorgen van een gebit. Het is een essentieel onderdeel van het welzijn, de gezondheid en de duurzame prestaties van elk paard. Wij combineren medische expertise op tweedelijns niveau met een persoonlijke aanpak die zorgt voor vertrouwen en rust, voor paard én eigenaar.",
       ),
       h2("Periodieke en expertise zorg"),
       p(
-        "Goede paardentandheelkunde vraagt meer dan techniek alleen. Het vraagt inzicht in de samenhang tussen gebit, voeding, training en gedrag. Naast periodieke controles voeren wij ook geavanceerde ingrepen uit — extracties, behandeling van EOTRH, sinusitis en meer — met dezelfde aandacht en precisie als in een klinische setting.",
+        "Goede paardentandheelkunde vraagt meer dan techniek alleen. Het vraagt inzicht in de samenhang tussen gebit, voeding, training en gedrag. Naast periodieke controles voeren wij ook geavanceerde ingrepen uit, zoals extracties, behandeling van EOTRH en sinusitis, met dezelfde aandacht en precisie als in een klinische setting.",
       ),
       h2("Bij u op de stal"),
       p(

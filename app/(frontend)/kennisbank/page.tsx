@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Kennisbank van EQDent: artikelen, achtergronden en kennis uit de paardentandheelkundige praktijk van drs. Mark van Manen.",
   alternates: { canonical: "https://eqdent.nl/kennisbank" },
   openGraph: {
-    title: "Kennisbank — EQDent",
+    title: "Kennisbank · EQDent",
     description:
       "Kennisbank van EQDent: artikelen, achtergronden en kennis uit de paardentandheelkundige praktijk.",
     url: "https://eqdent.nl/kennisbank",
