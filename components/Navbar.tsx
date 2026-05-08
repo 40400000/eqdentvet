@@ -104,6 +104,12 @@ export function Navbar({ variant = "default" }: { variant?: "default" | "white" 
                 >
                   Expertise zorg
                 </Link>
+                <Link
+                  href="/blog"
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  Blog
+                </Link>
               </div>
               <Link
                 href="/contact"
@@ -192,6 +198,13 @@ export function Navbar({ variant = "default" }: { variant?: "default" | "white" 
                       className="text-base font-light text-foreground hover:text-primary transition-all duration-200 py-4 px-3 rounded-lg hover:bg-accent/50"
                     >
                       Expertise zorg
+                    </Link>
+                    <Link
+                      href="/blog"
+                      onClick={closeMenu}
+                      className="text-base font-light text-foreground hover:text-primary transition-all duration-200 py-4 px-3 rounded-lg hover:bg-accent/50"
+                    >
+                      Blog
                     </Link>
                     <Link
                       href="/contact"
