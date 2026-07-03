@@ -48,3 +48,6 @@ components/FAQ_COMPETITOR.TSX
 *.db-journal
 *.db-shm
 *.db-wal
+
+# form submission backups
+/data/

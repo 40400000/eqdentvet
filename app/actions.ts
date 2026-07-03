@@ -2,9 +2,29 @@
 
 import { Resend } from 'resend'
 import { z } from 'zod'
+import { promises as fs } from 'fs'
+import path from 'path'
 import { formSchema } from '@/lib/validations'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+
+const BACKUP_DIR = path.join(process.cwd(), 'data')
+const BACKUP_FILE = path.join(BACKUP_DIR, 'form-submissions.jsonl')
+
+// Write every submission to a local file so we always have a copy, even if the emails fail
+async function saveSubmissionBackup(submission: Record<string, unknown>) {
+  try {
+    await fs.mkdir(BACKUP_DIR, { recursive: true })
+    await fs.appendFile(
+      BACKUP_FILE,
+      JSON.stringify({ ...submission, savedAt: new Date().toISOString() }) + '\n',
+      'utf8'
+    )
+    console.log('💾 Submission backed up to local file')
+  } catch (error) {
+    console.error('⚠️ Failed to write local submission backup:', error)
+  }
+}
 
 
 async function sendAdminNotification(formData: {
@@ -14,6 +34,7 @@ async function sendAdminNotification(formData: {
   phone: string
   address: string
   stalAddress: string
+  aanvullendeInformatie?: string
   timestamp: string
 }) {
   const subject = `Nieuwe afspraakaanvraag - ${formData.firstName} ${formData.lastName}`
@@ -41,6 +62,7 @@ async function sendAdminNotification(formData: {
             <p style="margin: 8px 0;"><strong>Telefoon:</strong> ${formData.phone}</p>
             <p style="margin: 8px 0;"><strong>Adres:</strong> ${formData.address}</p>
             <p style="margin: 8px 0;"><strong>Staladres:</strong> ${formData.stalAddress}</p>
+            ${formData.aanvullendeInformatie ? `<p style="margin: 8px 0;"><strong>Aanvullende informatie:</strong> ${formData.aanvullendeInformatie}</p>` : ''}
             <p style="margin: 8px 0;"><strong>Datum/tijd:</strong> ${formData.timestamp}</p>
           </div>
         </div>
@@ -172,6 +194,7 @@ export async function submitWaitlistForm(formData: FormData) {
       phone: formData.get("phone"),
       address: formData.get("address"),
       stalAddress: formData.get("stalAddress"),
+      aanvullendeInformatie: formData.get("aanvullendeInformatie") || undefined,
     }
 
     console.log("📋 Raw form data:", rawData)
@@ -191,6 +214,9 @@ export async function submitWaitlistForm(formData: FormData) {
       ...validatedData,
       timestamp
     }
+
+    // Back up the submission locally before sending emails, so we keep a copy even if both emails fail
+    await saveSubmissionBackup(submissionData)
 
     console.log("📧 Sending emails with data:", submissionData)
 

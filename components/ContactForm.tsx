@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react"
 import { submitWaitlistForm } from "@/app/actions"
@@ -71,6 +72,7 @@ export function ContactForm({
       phone: formData.get("phone") as string,
       address: formData.get("address") as string,
       stalAddress: formData.get("stalAddress") as string,
+      aanvullendeInformatie: (formData.get("aanvullendeInformatie") as string) || undefined,
     }
 
     try {
@@ -337,6 +339,22 @@ export function ContactForm({
                 {errors.stalAddress}
               </div>
             )}
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Label htmlFor="aanvullendeInformatie" className="text-foreground font-medium">
+                Aanvullende informatie
+              </Label>
+              <span className="text-sm text-muted-foreground">(niet verplicht)</span>
+            </div>
+            <Textarea
+              id="aanvullendeInformatie"
+              name="aanvullendeInformatie"
+              rows={4}
+              placeholder="Bijv. bijzonderheden over uw paard, voorkeuren voor dagen of tijden, of andere opmerkingen"
+              className="bg-muted border text-foreground placeholder:text-muted-foreground focus:bg-white border-border"
+            />
           </div>
 
           {/* Werkgebied notification */}

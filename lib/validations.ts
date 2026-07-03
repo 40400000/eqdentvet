@@ -7,6 +7,7 @@ export const formSchema = z.object({
   phone: z.string().min(1, "Telefoonnummer is verplicht").trim(),
   address: z.string().min(1, "Adres is verplicht").trim(),
   stalAddress: z.string().min(1, "Staladres is verplicht").trim(),
+  aanvullendeInformatie: z.string().trim().optional(),
 })
 
 export type FormData = z.infer<typeof formSchema>
